@@ -1,0 +1,271 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	6950 3550 6950 3450
+Wire Wire Line
+	6950 3250 7350 3250
+$Comp
+L Device:C C2
+U 1 1 5CD13038
+P 7350 3500
+F 0 "C2" H 7150 3500 50  0000 L CNN
+F 1 "100nF" H 7100 3400 50  0000 L CNN
+F 2 "" H 7388 3350 50  0001 C CNN
+F 3 "~" H 7350 3500 50  0001 C CNN
+	1    7350 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 3350 7350 3250
+Text HLabel 7150 3100 0    50   Input ~ 0
+VDD
+Wire Wire Line
+	6550 4150 6800 4150
+Wire Wire Line
+	6800 4150 6800 3900
+$Comp
+L power:VDD #PWR?
+U 1 1 5CD16738
+P 7750 3700
+F 0 "#PWR?" H 7750 3550 50  0001 C CNN
+F 1 "VDD" H 7767 3873 50  0000 C CNN
+F 2 "" H 7750 3700 50  0001 C CNN
+F 3 "" H 7750 3700 50  0001 C CNN
+	1    7750 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5CD1707B
+P 7750 4100
+F 0 "C4" H 7865 4146 50  0000 L CNN
+F 1 "10µF" H 7865 4055 50  0000 L CNN
+F 2 "" H 7788 3950 50  0001 C CNN
+F 3 "~" H 7750 4100 50  0001 C CNN
+	1    7750 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 3900 7750 3900
+$Comp
+L Device:C C3
+U 1 1 5CD1854A
+P 7200 4100
+F 0 "C3" H 7315 4146 50  0000 L CNN
+F 1 "100nF" H 7315 4055 50  0000 L CNN
+F 2 "" H 7238 3950 50  0001 C CNN
+F 3 "~" H 7200 4100 50  0001 C CNN
+	1    7200 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 3950 7750 3950
+$Comp
+L power:GND #PWR?
+U 1 1 5CD19977
+P 7750 4250
+F 0 "#PWR?" H 7750 4000 50  0001 C CNN
+F 1 "GND" H 7755 4077 50  0000 C CNN
+F 2 "" H 7750 4250 50  0001 C CNN
+F 3 "" H 7750 4250 50  0001 C CNN
+	1    7750 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CD19E78
+P 7200 4250
+F 0 "#PWR?" H 7200 4000 50  0001 C CNN
+F 1 "GND" H 7205 4077 50  0000 C CNN
+F 2 "" H 7200 4250 50  0001 C CNN
+F 3 "" H 7200 4250 50  0001 C CNN
+	1    7200 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 4300 6800 4300
+Wire Wire Line
+	6800 4300 6800 4150
+Connection ~ 6800 4150
+Wire Wire Line
+	5200 4450 5200 5100
+Wire Wire Line
+	5200 5100 5750 5100
+Wire Wire Line
+	6450 5100 6450 5250
+$Comp
+L power:GND #PWR?
+U 1 1 5CD1DDAF
+P 6450 5250
+F 0 "#PWR?" H 6450 5000 50  0001 C CNN
+F 1 "GND" H 6455 5077 50  0000 C CNN
+F 2 "" H 6450 5250 50  0001 C CNN
+F 3 "" H 6450 5250 50  0001 C CNN
+	1    6450 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 5000 5750 5100
+Connection ~ 5750 5100
+Wire Wire Line
+	5750 5100 5850 5100
+Wire Wire Line
+	5850 5000 5850 5100
+Connection ~ 5850 5100
+Wire Wire Line
+	5850 5100 6000 5100
+Wire Wire Line
+	6000 5000 6000 5100
+Connection ~ 6000 5100
+Wire Wire Line
+	6000 5100 6100 5100
+Wire Wire Line
+	6100 5000 6100 5100
+Connection ~ 6100 5100
+Wire Wire Line
+	6100 5100 6200 5100
+Wire Wire Line
+	6200 5000 6200 5100
+Connection ~ 6200 5100
+Wire Wire Line
+	6200 5100 6450 5100
+Connection ~ 7350 3250
+Wire Wire Line
+	7350 3100 7350 3250
+$Comp
+L power:VDD #PWR?
+U 1 1 5CD13849
+P 7350 3100
+F 0 "#PWR?" H 7350 2950 50  0001 C CNN
+F 1 "VDD" H 7367 3273 50  0000 C CNN
+F 2 "" H 7350 3100 50  0001 C CNN
+F 3 "" H 7350 3100 50  0001 C CNN
+	1    7350 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 3100 7350 3100
+Connection ~ 7350 3100
+Text HLabel 6050 3000 1    50   Input ~ 0
+SCL
+Text HLabel 5950 3000 1    50   BiDi ~ 0
+SDA-SDISDO
+Text HLabel 5850 3500 1    50   BiDi ~ 0
+SDO-SA0
+Text HLabel 5750 3500 1    50   Input ~ 0
+CS
+Wire Wire Line
+	5850 3500 5850 3600
+Wire Wire Line
+	5750 3500 5750 3600
+Text HLabel 5200 4150 0    50   Output ~ 0
+INT2
+Text HLabel 5200 4300 0    50   Output ~ 0
+INT1
+Wire Wire Line
+	7550 3700 7750 3700
+Wire Wire Line
+	5350 4450 5200 4450
+Wire Wire Line
+	5200 4300 5350 4300
+Wire Wire Line
+	5200 4150 5350 4150
+$Comp
+L power:GND #PWR?
+U 1 1 5CD1403B
+P 7350 3650
+F 0 "#PWR?" H 7350 3400 50  0001 C CNN
+F 1 "GND" H 7355 3477 50  0000 C CNN
+F 2 "" H 7350 3650 50  0001 C CNN
+F 3 "" H 7350 3650 50  0001 C CNN
+	1    7350 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L LSM6DS33TR:LSM6DS33TR U?
+U 1 1 5CD0DE35
+P 5950 4300
+F 0 "U?" H 5900 4300 50  0000 L CNN
+F 1 "LSM6DS33TR" H 5750 4200 43  0000 L CIN
+F 2 "PQFN50P300X300X86-16N" H 5350 3100 50  0001 L BNN
+F 3 "" H 6750 3550 50  0001 L BNN
+F 4 "Integrated Circuit, Misc s 3d Accelerometer And Gyro Lsm6ds3" H 5350 3100 50  0001 L BNN "Field5"
+F 5 "LSM6DS33TR" H 6750 3550 50  0001 L BNN "Field6"
+F 6 "497-15996-1-ND" H 6750 3550 50  0001 L BNN "Field7"
+F 7 "LGA-16 STMicroelectronics" H 5350 3100 50  0001 L BNN "Field8"
+	1    5950 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 3950 7750 3900
+Connection ~ 7750 3950
+Wire Wire Line
+	7750 3900 7750 3700
+Connection ~ 7750 3900
+Connection ~ 7750 3700
+Wire Wire Line
+	7350 3100 7550 3100
+Wire Wire Line
+	7550 3100 7550 3700
+Wire Wire Line
+	6150 3550 6150 3600
+Wire Wire Line
+	6200 3450 6050 3450
+Wire Wire Line
+	6050 3000 6050 3450
+Connection ~ 6050 3450
+Wire Wire Line
+	6050 3450 6050 3600
+Wire Wire Line
+	6150 3550 6950 3550
+$Comp
+L Device:R Rpu
+U 1 1 5CD31892
+P 6350 3450
+F 0 "Rpu" V 6350 3450 50  0000 C CNN
+F 1 "10kOhms" V 6250 3450 50  0000 C CNN
+F 2 "" V 6280 3450 50  0001 C CNN
+F 3 "~" H 6350 3450 50  0001 C CNN
+	1    6350 3450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 3450 6950 3450
+Connection ~ 6950 3450
+Wire Wire Line
+	6950 3450 6950 3250
+$Comp
+L Device:R Rpu
+U 1 1 5CD349A4
+P 6500 3250
+F 0 "Rpu" V 6500 3250 50  0000 C CNN
+F 1 "10kOhms" V 6400 3250 50  0000 C CNN
+F 2 "" V 6430 3250 50  0001 C CNN
+F 3 "~" H 6500 3250 50  0001 C CNN
+	1    6500 3250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5950 3250 6350 3250
+Wire Wire Line
+	6650 3250 6950 3250
+Connection ~ 6950 3250
+Connection ~ 5950 3250
+Wire Wire Line
+	5950 3250 5950 3600
+Wire Wire Line
+	5950 3000 5950 3250
+$EndSCHEMATC
