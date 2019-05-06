@@ -59,11 +59,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# bh1792glc_BH1792GLC
+# HealthMonitor-rescue_BH1792GLC-bh1792glc
 #
-DEF bh1792glc_BH1792GLC U 0 40 Y Y 1 F N
+DEF HealthMonitor-rescue_BH1792GLC-bh1792glc U 0 40 Y Y 1 F N
 F0 "U" 0 0 50 H V C CNN
-F1 "bh1792glc_BH1792GLC" 0 100 50 H V C CNN
+F1 "HealthMonitor-rescue_BH1792GLC-bh1792glc" 0 100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

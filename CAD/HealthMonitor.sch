@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:HealthMonitor-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -13,200 +14,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L bh1792glc:BH1792GLC U?
-U 1 1 5CC0C673
-P 6050 3400
-F 0 "U?" H 6025 3865 50  0000 C CNN
-F 1 "BH1792GLC" H 6025 3774 50  0000 C CNN
-F 2 "" H 6050 3400 50  0001 C CNN
-F 3 "" H 6050 3400 50  0001 C CNN
-	1    6050 3400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:LED D3
-U 1 1 5CC0C7AE
-P 4500 2950
-F 0 "D3" V 4550 3250 50  0000 R CNN
-F 1 "LED_ir" V 4450 3300 50  0000 R CNN
-F 2 "" H 4500 2950 50  0001 C CNN
-F 3 "~" H 4500 2950 50  0001 C CNN
-	1    4500 2950
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	5500 3400 5000 3400
-Wire Wire Line
-	5000 3400 5000 3100
-Wire Wire Line
-	4750 3500 4750 3100
-Wire Wire Line
-	4750 3500 5500 3500
-Wire Wire Line
-	4500 3600 5500 3600
-$Comp
-L Device:LED D2
-U 1 1 5CC0C8EA
-P 4750 2950
-F 0 "D2" V 4800 2850 50  0000 R CNN
-F 1 "LED_green" V 4900 3100 50  0000 R CNN
-F 2 "" H 4750 2950 50  0001 C CNN
-F 3 "~" H 4750 2950 50  0001 C CNN
-	1    4750 2950
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:LED D1
-U 1 1 5CC0C908
-P 5000 2950
-F 0 "D1" V 5038 2832 50  0000 R CNN
-F 1 "LED_green" V 4950 2850 50  0000 R CNN
-F 2 "" H 5000 2950 50  0001 C CNN
-F 3 "~" H 5000 2950 50  0001 C CNN
-	1    5000 2950
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	4500 3100 4500 3600
-Wire Wire Line
-	4500 2800 4500 2600
-Wire Wire Line
-	4500 2600 4750 2600
-Wire Wire Line
-	5000 2600 5000 2800
-Wire Wire Line
-	4750 2800 4750 2600
-Connection ~ 4750 2600
-Wire Wire Line
-	5500 3200 5500 2600
-Wire Wire Line
-	5500 2600 5400 2600
-Connection ~ 5000 2600
-$Comp
-L power:GND #PWR?
-U 1 1 5CC0CC3B
-P 5350 3300
-F 0 "#PWR?" H 5350 3050 50  0001 C CNN
-F 1 "GND" V 5355 3172 50  0000 R CNN
-F 2 "" H 5350 3300 50  0001 C CNN
-F 3 "" H 5350 3300 50  0001 C CNN
-	1    5350 3300
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5350 3300 5400 3300
-$Comp
-L power:VCC #PWR?
-U 1 1 5CC0CDAD
-P 5050 2500
-F 0 "#PWR?" H 5050 2350 50  0001 C CNN
-F 1 "VCC" H 5067 2673 50  0000 C CNN
-F 2 "" H 5050 2500 50  0001 C CNN
-F 3 "" H 5050 2500 50  0001 C CNN
-	1    5050 2500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5050 2500 5050 2600
-Connection ~ 5050 2600
-Wire Wire Line
-	5050 2600 5000 2600
-Wire Wire Line
-	4750 2600 5000 2600
-$Comp
-L Device:C C1
-U 1 1 5CC0D0E2
-P 5400 2900
-F 0 "C1" H 5515 2946 50  0000 L CNN
-F 1 "1u" H 5515 2855 50  0000 L CNN
-F 2 "" H 5438 2750 50  0001 C CNN
-F 3 "~" H 5400 2900 50  0001 C CNN
-	1    5400 2900
-	1    0    0    -1  
-$EndComp
-Connection ~ 5400 3300
-Wire Wire Line
-	5400 3300 5500 3300
-Connection ~ 5400 2600
-Wire Wire Line
-	5400 2600 5050 2600
-Wire Wire Line
-	5400 2750 5400 2600
-Wire Wire Line
-	5400 3050 5400 3300
-$Comp
-L Device:R R1
-U 1 1 5CC0D78E
-P 6700 2850
-F 0 "R1" H 6770 2896 50  0000 L CNN
-F 1 "10k" H 6770 2805 50  0000 L CNN
-F 2 "" V 6630 2850 50  0001 C CNN
-F 3 "~" H 6700 2850 50  0001 C CNN
-	1    6700 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R2
-U 1 1 5CC0D826
-P 6950 2850
-F 0 "R2" H 7020 2896 50  0000 L CNN
-F 1 "10k" H 7020 2805 50  0000 L CNN
-F 2 "" V 6880 2850 50  0001 C CNN
-F 3 "~" H 6950 2850 50  0001 C CNN
-	1    6950 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R3
-U 1 1 5CC0D850
-P 7200 2850
-F 0 "R3" H 7270 2896 50  0000 L CNN
-F 1 "10k" H 7270 2805 50  0000 L CNN
-F 2 "" V 7130 2850 50  0001 C CNN
-F 3 "~" H 7200 2850 50  0001 C CNN
-	1    7200 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7200 2700 7200 2600
-Wire Wire Line
-	7200 2600 6950 2600
-Connection ~ 5500 2600
-Wire Wire Line
-	6700 2700 6700 2600
-Connection ~ 6700 2600
-Wire Wire Line
-	6700 2600 5500 2600
-Wire Wire Line
-	6950 2700 6950 2600
-Connection ~ 6950 2600
-Wire Wire Line
-	6950 2600 6700 2600
-Wire Wire Line
-	6700 3000 6700 3200
-Wire Wire Line
-	6700 3200 6550 3200
-Wire Wire Line
-	6550 3300 6950 3300
-Wire Wire Line
-	6950 3300 6950 3000
-Wire Wire Line
-	6550 3600 7200 3600
-Wire Wire Line
-	7200 3600 7200 3000
-$Comp
-L power:GND #PWR?
-U 1 1 5CC0E6E1
-P 6700 3500
-F 0 "#PWR?" H 6700 3250 50  0001 C CNN
-F 1 "GND" V 6705 3372 50  0000 R CNN
-F 2 "" H 6700 3500 50  0001 C CNN
-F 3 "" H 6700 3500 50  0001 C CNN
-	1    6700 3500
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	6550 3500 6700 3500
-NoConn ~ 6550 3400
+$Sheet
+S 8050 2800 1600 2300
+U 5CD03BDA
+F0 "bh1792-interface" 50
+F1 "bh1792-interface.sch" 50
+$EndSheet
 $EndSCHEMATC

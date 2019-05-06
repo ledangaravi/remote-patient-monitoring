@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name bh1792glc)(type Legacy)(uri /home/udvpeter/HealthMonitor/HealthMonitor/bh1792glc.lib)(options "")(descr ""))
+  (lib (name HealthMonitor-rescue)(type Legacy)(uri ${KIPRJMOD}/HealthMonitor-rescue.lib)(options "")(descr ""))
 )

@@ -1,0 +1,213 @@
+EESchema Schematic File Version 4
+LIBS:HealthMonitor-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L HealthMonitor-rescue:BH1792GLC-bh1792glc U?
+U 1 1 5CD03E93
+P 6000 3700
+F 0 "U?" H 5975 4165 50  0000 C CNN
+F 1 "BH1792GLC" H 5975 4074 50  0000 C CNN
+F 2 "" H 6000 3700 50  0001 C CNN
+F 3 "" H 6000 3700 50  0001 C CNN
+	1    6000 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5CD03E9A
+P 4450 3250
+F 0 "D?" V 4500 3550 50  0000 R CNN
+F 1 "LED_ir" V 4400 3600 50  0000 R CNN
+F 2 "" H 4450 3250 50  0001 C CNN
+F 3 "~" H 4450 3250 50  0001 C CNN
+	1    4450 3250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5450 3700 4950 3700
+Wire Wire Line
+	4950 3700 4950 3400
+Wire Wire Line
+	4700 3800 4700 3400
+Wire Wire Line
+	4700 3800 5450 3800
+Wire Wire Line
+	4450 3900 5450 3900
+$Comp
+L Device:LED D?
+U 1 1 5CD03EA6
+P 4700 3250
+F 0 "D?" V 4750 3150 50  0000 R CNN
+F 1 "LED_green" V 4850 3400 50  0000 R CNN
+F 2 "" H 4700 3250 50  0001 C CNN
+F 3 "~" H 4700 3250 50  0001 C CNN
+	1    4700 3250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5CD03EAD
+P 4950 3250
+F 0 "D?" V 4988 3132 50  0000 R CNN
+F 1 "LED_green" V 4900 3150 50  0000 R CNN
+F 2 "" H 4950 3250 50  0001 C CNN
+F 3 "~" H 4950 3250 50  0001 C CNN
+	1    4950 3250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4450 3400 4450 3900
+Wire Wire Line
+	4450 3100 4450 2900
+Wire Wire Line
+	4450 2900 4700 2900
+Wire Wire Line
+	4950 2900 4950 3100
+Wire Wire Line
+	4700 3100 4700 2900
+Connection ~ 4700 2900
+Wire Wire Line
+	5450 3500 5450 2900
+Wire Wire Line
+	5450 2900 5350 2900
+Connection ~ 4950 2900
+$Comp
+L power:GND #PWR?
+U 1 1 5CD03EBD
+P 5300 3600
+F 0 "#PWR?" H 5300 3350 50  0001 C CNN
+F 1 "GND" V 5305 3472 50  0000 R CNN
+F 2 "" H 5300 3600 50  0001 C CNN
+F 3 "" H 5300 3600 50  0001 C CNN
+	1    5300 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5300 3600 5350 3600
+$Comp
+L power:VCC #PWR?
+U 1 1 5CD03EC4
+P 5000 2800
+F 0 "#PWR?" H 5000 2650 50  0001 C CNN
+F 1 "VCC" H 5017 2973 50  0000 C CNN
+F 2 "" H 5000 2800 50  0001 C CNN
+F 3 "" H 5000 2800 50  0001 C CNN
+	1    5000 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 2800 5000 2900
+Connection ~ 5000 2900
+Wire Wire Line
+	5000 2900 4950 2900
+Wire Wire Line
+	4700 2900 4950 2900
+$Comp
+L Device:C C?
+U 1 1 5CD03ECE
+P 5350 3200
+F 0 "C?" H 5465 3246 50  0000 L CNN
+F 1 "1u" H 5465 3155 50  0000 L CNN
+F 2 "" H 5388 3050 50  0001 C CNN
+F 3 "~" H 5350 3200 50  0001 C CNN
+	1    5350 3200
+	1    0    0    -1  
+$EndComp
+Connection ~ 5350 3600
+Wire Wire Line
+	5350 3600 5450 3600
+Connection ~ 5350 2900
+Wire Wire Line
+	5350 2900 5000 2900
+Wire Wire Line
+	5350 3050 5350 2900
+Wire Wire Line
+	5350 3350 5350 3600
+$Comp
+L Device:R R?
+U 1 1 5CD03EDB
+P 6650 3150
+F 0 "R?" H 6720 3196 50  0000 L CNN
+F 1 "10k" H 6720 3105 50  0000 L CNN
+F 2 "" V 6580 3150 50  0001 C CNN
+F 3 "~" H 6650 3150 50  0001 C CNN
+	1    6650 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CD03EE2
+P 6900 3150
+F 0 "R?" H 6970 3196 50  0000 L CNN
+F 1 "10k" H 6970 3105 50  0000 L CNN
+F 2 "" V 6830 3150 50  0001 C CNN
+F 3 "~" H 6900 3150 50  0001 C CNN
+	1    6900 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CD03EE9
+P 7150 3150
+F 0 "R?" H 7220 3196 50  0000 L CNN
+F 1 "10k" H 7220 3105 50  0000 L CNN
+F 2 "" V 7080 3150 50  0001 C CNN
+F 3 "~" H 7150 3150 50  0001 C CNN
+	1    7150 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 3000 7150 2900
+Wire Wire Line
+	7150 2900 6900 2900
+Connection ~ 5450 2900
+Wire Wire Line
+	6650 3000 6650 2900
+Connection ~ 6650 2900
+Wire Wire Line
+	6650 2900 5450 2900
+Wire Wire Line
+	6900 3000 6900 2900
+Connection ~ 6900 2900
+Wire Wire Line
+	6900 2900 6650 2900
+Wire Wire Line
+	6650 3300 6650 3500
+Wire Wire Line
+	6650 3500 6500 3500
+Wire Wire Line
+	6500 3600 6900 3600
+Wire Wire Line
+	6900 3600 6900 3300
+Wire Wire Line
+	6500 3900 7150 3900
+Wire Wire Line
+	7150 3900 7150 3300
+$Comp
+L power:GND #PWR?
+U 1 1 5CD03EFF
+P 6650 3800
+F 0 "#PWR?" H 6650 3550 50  0001 C CNN
+F 1 "GND" V 6655 3672 50  0000 R CNN
+F 2 "" H 6650 3800 50  0001 C CNN
+F 3 "" H 6650 3800 50  0001 C CNN
+	1    6650 3800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6500 3800 6650 3800
+NoConn ~ 6500 3700
+$EndSCHEMATC
