@@ -1,4 +1,9 @@
 (sym_lib_table
   (lib (name bh1792glc)(type Legacy)(uri /home/udvpeter/HealthMonitor/HealthMonitor/bh1792glc.lib)(options "")(descr ""))
   (lib (name HealthMonitor-rescue)(type Legacy)(uri ${KIPRJMOD}/HealthMonitor-rescue.lib)(options "")(descr ""))
+  (lib (name LTC3109EUF)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/LTC3109EUF.lib)(options "")(descr ""))
+  (lib (name LTC4071EMS8E)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/LTC4071EMS8E.lib)(options "")(descr ""))
+  (lib (name AS11P2TLRQ)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/AS11P2TLRQ.lib)(options "")(descr ""))
+  (lib (name ADP5092ACPZ1R7)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/ADP5092ACPZ1R7.lib)(options "")(descr ""))
+  (lib (name LTC4079)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/LTC4079.lib)(options "")(descr ""))
 )
