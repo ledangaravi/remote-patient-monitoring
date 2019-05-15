@@ -1,0 +1,7 @@
+(fp_lib_table
+  (lib (name LSM6DS33TR)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/LSM6DS33TR.mod)(options "")(descr ""))
+  (lib (name LTC3109EUF)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/LTC3109EUF.mod)(options "")(descr ""))
+  (lib (name SML-LX0404SIUPGUSB)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/SML-LX0404SIUPGUSB.mod)(options "")(descr ""))
+  (lib (name BH1790GLC-E2)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/BH1790GLC-E2.mod)(options "")(descr ""))
+  (lib (name ABS06-32.768KHZ-T)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/ABS06-32.768KHZ-T.mod)(options "")(descr ""))
+)

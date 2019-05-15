@@ -1,0 +1,59 @@
+PCBNEW-LibModule-V1  
+# encoding utf-8
+Units mm
+$INDEX
+DIOC0404X01-4N
+$EndINDEX
+$MODULE DIOC0404X01-4N
+Po 0 0 0 15 00000000 00000000 ~~
+Li DIOC0404X01-4N
+Cd 
+Sc 00000000
+At SMD
+Op 0 0 0
+.SolderMask 0
+.SolderPaste 0
+T0 -0.500307 -1.00061 0.157577 0.157577 0 0.05 N V 21 "DIOC0404X01-4N"
+T1 -0.40008 1.10022 0.157513 0.157513 0 0.05 N V 21 "VAL**"
+DS -0.5 0.5 0.5 0.5 0.03 27
+DS 0.5 0.5 0.5 -0.5 0.03 27
+DS 0.5 -0.5 -0.5 -0.5 0.03 27
+DS -0.5 -0.5 -0.5 0.5 0.03 27
+DP 0 0 0 0 4 0 27
+Dl 0.20039 -0.5
+Dl 0.5 -0.5
+Dl 0.5 -0.20039
+Dl 0.20039 -0.20039
+$PAD
+Sh "4" R 0.45 0.45 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -0.425 -0.425
+$EndPAD
+$PAD
+Sh "1" R 0.45 0.45 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 0.425141 -0.424803
+$EndPAD
+$PAD
+Sh "2" R 0.45 0.45 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 0.425141 0.425141
+$EndPAD
+$PAD
+Sh "3" R 0.45 0.45 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -0.424803 0.425141
+$EndPAD
+$EndMODULE DIOC0404X01-4N
