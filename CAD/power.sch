@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
 LIBS:HealthMonitor-cache
-LIBS:Max86141-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -572,7 +571,7 @@ U 1 1 5CDAC8A1
 P 2650 4250
 F 0 "J6" H 2755 5117 50  0000 C CNN
 F 1 "USB_C_Receptacle_USB2.0" H 2755 5026 50  0000 C CNN
-F 2 "Connector_USB:USB_C_Receptacle_Amphenol_12401610E4-2A_CircularHoles" H 2800 4250 50  0001 C CNN
+F 2 "footprints:USB_C_Receptacle_Amphenol_12401610E4-2A_CircularHoles" H 2800 4250 50  0001 C CNN
 F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 2800 4250 50  0001 C CNN
 	1    2650 4250
 	1    0    0    -1  
