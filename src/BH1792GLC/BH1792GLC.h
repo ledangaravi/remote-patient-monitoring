@@ -3,12 +3,10 @@
 
 #include "BH1792GLC_registers.h"
 
-#include "nrfx_twim.h"
-#include "nrf_drv_gpiote.h"
-#include "nrfx_gpiote.h"
-#include "nrfx_twim.h"
 #include "nrf_delay.h"
 #include "nrf_drv_timer.h"
+
+#include "I2C.h"
 
 #include <stdint.h>
 
@@ -59,7 +57,7 @@ class BH1792GLC
 
     public:
 
-        nrfx_twim_t *m_twi;
+        I2C *m_i2c;
 
         bh1792_prm_t prm;
         bh1792_maPrm_t ma_prm;
@@ -69,7 +67,7 @@ class BH1792GLC
         int8_t p_int;
         bh1792_data_t m_dat;
 
-        BH1792GLC(nrfx_twim_t * _m_twi);
+        BH1792GLC(I2C *_i2c);
         BH1792GLC();
         
         int32_t init();

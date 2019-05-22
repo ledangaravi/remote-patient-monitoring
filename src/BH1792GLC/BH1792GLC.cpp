@@ -4,39 +4,10 @@
 #include <iterator>
 
 
-BH1792GLC::BH1792GLC(nrfx_twim_t * _m_twi) : m_twi(_m_twi) {}
+BH1792GLC::BH1792GLC(I2C * _i2c) : m_i2c(_i2c) {}
 
 BH1792GLC::BH1792GLC(){}
 
-
-
-int32_t BH1792GLC::_i2c_write(uint8_t slv_adr, uint8_t reg_adr, uint8_t *reg, uint8_t reg_size)
-{
-    int32_t err_code;
-
-    std::vector<uint8_t> i2c_cmd(reg, reg + reg_size);
-
-    i2c_cmd.insert(i2c_cmd.begin(), reg_adr);
-
-    err_code = nrfx_twim_tx(m_twi, slv_adr, &i2c_cmd[0], reg_size + 1U, false);
-    APP_ERROR_CHECK(err_code);
-
-    return 0;
-}
-
-
-int32_t BH1792GLC::_i2c_read(uint8_t slv_adr, uint8_t reg_adr, uint8_t *reg, uint8_t reg_size)
-{
-    int32_t err_code;
-
-    err_code = nrfx_twim_tx(m_twi, slv_adr, &reg_adr, 1U, false);
-    APP_ERROR_CHECK(err_code);
-
-    err_code = nrfx_twim_rx(m_twi, slv_adr, reg, reg_size);
-    APP_ERROR_CHECK(err_code);
-
-    return 0;
-}
 
 
 int32_t BH1792GLC::init()
@@ -61,20 +32,19 @@ int32_t BH1792GLC::init()
     this->is_measuring = 0;
     this->sync_seq     = 0;
 
-    ret_i2c = this->_i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_PARTID, reg, 1U);
+    ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_PARTID, reg, 1U);
     if(ret_i2c == 0) {
         if(reg[0] != BH1792_PRM_PARTID) {
             ret = BH1792_NOT_EXIST;
         }
         else {
             reg[0] = BH1792_PRM_SWRESET << 7;
-            ret_i2c = this->_i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_RESET, reg, 1U);
+            ret_i2c = this->m_i2c->i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_RESET, reg, 1U);
         }
     }
 
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
-        ret = BH1792_I2C_ERR;
     }
 
     return ret;
@@ -101,10 +71,9 @@ int32_t BH1792GLC::configure(void)
         reg_size = 7U;
     }
  
-    ret_i2c = this->_i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_MEAS_CTRL1, reg, reg_size);
+    ret_i2c = this->m_i2c->i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_MEAS_CTRL1, reg, reg_size);
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
-        ret = BH1792_I2C_ERR;
     }
 
     return ret;
@@ -145,10 +114,9 @@ int32_t BH1792GLC::start_measurement(void)
     }
 
     reg[0] = BH1792_PRM_MEAS_ST;
-    ret_i2c = this->_i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_MEAS_START, reg, 1U);
+    ret_i2c = this->m_i2c->i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_MEAS_START, reg, 1U);
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
-        ret = BH1792_I2C_ERR;
     }
 
     return ret;
@@ -165,10 +133,9 @@ int32_t BH1792GLC::stop_measurement(void)
     this->sync_seq     = 0;
 
     reg[0] = BH1792_PRM_SWRESET << 7;
-    ret_i2c = this->_i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_RESET, reg, 1U);
+    ret_i2c = this->m_i2c->i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_RESET, reg, 1U);
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
-        ret = BH1792_I2C_ERR;
     }
 
     return ret;
@@ -182,7 +149,7 @@ int32_t BH1792GLC::get_measurement_data()
     uint8_t fifo_level = 0U;
 
     if(this->prm.msr <= BH1792_PRM_MSR_1024HZ) {
-        ret_i2c = this->_i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_LEV, &m_dat.fifo_lev, 1U);
+        ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_LEV, &m_dat.fifo_lev, 1U);
         if(ret_i2c == 0) {
             if(m_dat.fifo_lev == BH1792_PRM_FIFO_LEV_FULL) {
                 ret = BH1792_FIFO_FULL;
@@ -194,7 +161,7 @@ int32_t BH1792GLC::get_measurement_data()
 
             ret_i2c = this->get_fifo_data();
             if(ret_i2c == 0) {
-                ret_i2c = this->_i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_LEV, &fifo_level, 1U);
+                ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_LEV, &fifo_level, 1U);
             }
         }
     }
@@ -204,14 +171,13 @@ int32_t BH1792GLC::get_measurement_data()
 
         if(ret_i2c == 0) {
             if(this->prm.int_sel >= BH1792_PRM_INT_SEL_IR) {
-                ret_i2c = this->_i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_INT_CLEAR, &int_clear, 1U);
+                ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_INT_CLEAR, &int_clear, 1U);
             }
         }
     }
 
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
-        ret = BH1792_I2C_ERR;
     }
 
     return ret;
@@ -225,10 +191,9 @@ int32_t BH1792GLC::send_sync(void)
     uint8_t reg[1];
 
     reg[0] = BH1792_PRM_MEAS_SYNC;
-    ret_i2c = this->_i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_MEAS_SYNC, reg, 1U);
+    ret_i2c = this->m_i2c->i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_MEAS_SYNC, reg, 1U);
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
-        ret = BH1792_I2C_ERR;
     }
     else {
         if(this->sync_seq < 3) {
@@ -254,19 +219,18 @@ int32_t BH1792GLC::clear_fifo(void)
     }
 
     for(i = 0; i < r_cnt; i++) {
-        ret_i2c = this->_i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_DATA0_LSBS, reg, 4U);
+        ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_DATA0_LSBS, reg, 4U);
         if(ret_i2c != 0) {
             break;
         }
     }
 
     if(ret_i2c == 0) {
-        ret_i2c = this->_i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_LEV, &fifo_level, 1U);
+        ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_LEV, &fifo_level, 1U);
     }
 
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
-        ret = BH1792_I2C_ERR;
     }
 
     return ret;
@@ -284,7 +248,7 @@ int32_t BH1792GLC::get_out_data()
         idx = 4U;
     }
 
-    ret_i2c = this->_i2c_read(BH1792_SLAVE_ADDR, (BH1792_ADDR_IRDATA_LEDOFF_LSBS + idx), &reg[idx], 4U);
+    ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, (BH1792_ADDR_IRDATA_LEDOFF_LSBS + idx), &reg[idx], 4U);
     if(ret_i2c == 0) {
         m_dat.ir.off    = ((uint16_t)reg[1] << 8) | (uint16_t)reg[0];
         m_dat.ir.on     = ((uint16_t)reg[3] << 8) | (uint16_t)reg[2];
@@ -306,7 +270,7 @@ int32_t BH1792GLC::get_fifo_data()
     ma_prm = &(this->ma_prm);
 
     for(i = 0U; i < m_dat.fifo_lev; i++) {
-        ret_i2c = this->_i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_DATA0_LSBS, reg, 4U);
+        ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_DATA0_LSBS, reg, 4U);
         if(ret_i2c != 0) {
             break;
         }

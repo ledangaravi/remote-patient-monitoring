@@ -1,23 +1,23 @@
 Output/ble_app_hrs_pca10040_s132\ Release/Obj/nrf_log_backend_serial.o: \
- /home/udvpeter/remote-patient-monitoring/nRF5_SDK_15.3.0_59ac345/components/libraries/log/src/nrf_log_backend_serial.c \
+ C:\Users\simon\remote-patient-monitoring\nRF5_SDK_15.3.0_59ac345\components\libraries\log\src\nrf_log_backend_serial.c \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_common.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/user_config.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/compat.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/host.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_system.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdint.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdbool.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/user_config.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/compat.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/host.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_system.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h \
+ c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\string.h \
+ c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\__crossworks.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
  ../config/sdk_config.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/nordic_common.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/mdk/compiler_abstraction.h \
@@ -25,8 +25,8 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/nrf_log_backend_serial.o: \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_errors.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_error.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_util.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stddef.h \
+ c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stddef.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/mdk/nrf.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/mdk/nrf52.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/toolchain/cmsis/include/core_cm4.h \
@@ -43,11 +43,11 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/nrf_log_backend_serial.o: \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_svc.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_macros.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/nrf_assert.h \
- /home/udvpeter/remote-patient-monitoring/nRF5_SDK_15.3.0_59ac345/components/libraries/log/src/nrf_log_backend_serial.h \
+ C:\Users\simon\remote-patient-monitoring\nRF5_SDK_15.3.0_59ac345\components\libraries\log\src\nrf_log_backend_serial.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_backend_interface.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/memobj/nrf_memobj.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdlib.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdlib.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdlib.h \
+ c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stdlib.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_errors.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/balloc/nrf_balloc.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_util_platform.h \
@@ -57,8 +57,8 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/nrf_log_backend_serial.o: \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_error_soc.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_nvic.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_error.h \
- /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdio.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
+ C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdio.h \
+ c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stdio.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_error_weak.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_util.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_instance.h \
@@ -70,5 +70,5 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/nrf_log_backend_serial.o: \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_ctrl.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/src/nrf_log_ctrl_internal.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_backend_interface.h \
- /home/udvpeter/remote-patient-monitoring/nRF5_SDK_15.3.0_59ac345/components/libraries/log/src/nrf_log_internal.h \
+ C:\Users\simon\remote-patient-monitoring\nRF5_SDK_15.3.0_59ac345\components\libraries\log\src\nrf_log_internal.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_types.h

@@ -94,6 +94,9 @@ extern "C" {
 #include "BH1792GLC.h"
 #include "BH1792GLC_registers.h"
 
+#include "i2c.h"
+#include "LSM6DSLSensor.h"
+
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
@@ -974,6 +977,8 @@ static void idle_state_handle(void)
 /* TWI instance. */
 static const nrfx_twim_t m_twi = NRFX_TWIM_INSTANCE(TWI_INSTANCE_ID);
 
+static const I2C m_i2c = I2C(&m_twi);
+
 static const nrf_drv_timer_t TIMER_SYNC = NRF_DRV_TIMER_INSTANCE(0);
 
 static bool invalidate = false;
@@ -1128,7 +1133,7 @@ int main(void)
     twi_init();
     gpio_init();
 
-    m_bh1792 = BH1792GLC(&m_twi);
+    m_bh1792 = BH1792GLC(&m_i2c);
 
     m_bh1792.init();
 
