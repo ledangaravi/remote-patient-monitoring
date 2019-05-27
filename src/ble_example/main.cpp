@@ -47,7 +47,7 @@
  */
 
 #include <stdint.h>
-#include <string.h>
+#include <string>
 #include <vector>
 #include <iterator>
 
@@ -78,6 +78,7 @@
 #include "nrf_ble_lesc.h"
 #include "nrf_ble_qwr.h"
 #include "ble_conn_state.h"
+#include "nrf_atfifo.h"
 
 #include "nrf.h"
 #include "nrf_drv_gpiote.h"
@@ -85,6 +86,7 @@
 #include "nrfx_twim.h"
 #include "nrf_delay.h"
 #include "nrf_drv_timer.h"
+//#include "arm_const_structs.h"
 
 
 extern "C" {
@@ -95,7 +97,7 @@ extern "C" {
 #include "BH1792GLC_registers.h"
 
 #include "i2c.h"
-#include "LSM6DSLSensor.h"
+#include "lsm6dsl_reg.h"
 
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
@@ -149,6 +151,9 @@ extern "C" {
 #define SEC_PARAM_MAX_KEY_SIZE              16                                      /**< Maximum encryption key size. */
 
 #define DEAD_BEEF                           0xDEADBEEF                              /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
+
+#define FPU_EXCEPTION_MASK 0x0000009F
+#define FPU_FPSCR_REG_STACK_OFF 0x40
 
 
 BLE_HRS_DEF(m_hrs);                                                 /**< Heart rate service instance. */
@@ -979,11 +984,15 @@ static const nrfx_twim_t m_twi = NRFX_TWIM_INSTANCE(TWI_INSTANCE_ID);
 
 static const I2C m_i2c = I2C(&m_twi);
 
-static const nrf_drv_timer_t TIMER_SYNC = NRF_DRV_TIMER_INSTANCE(0);
+static const nrfx_timer_t TIMER_SYNC = NRF_DRV_TIMER_INSTANCE(0);
 
-static bool invalidate = false;
+static uint32_t ctr = 0;
 
-static std::vector<float> samples;
+uint32_t previous_tick = 0;
+uint32_t current_tick = 0;
+static uint16_t step_count = 0;
+
+NRF_ATFIFO_DEF(sample_fifo, uint16_t, 15360U);
 
 /* Buffer for samples read from temperature sensor. */
 static uint32_t m_sample = 0;
@@ -991,26 +1000,61 @@ static uint32_t m_sample = 0;
 BH1792GLC m_bh1792;
 bh1792_data_t m_bh1792_dat;
 
+static axis3bit16_t data_raw_acceleration;
+static axis3bit16_t data_raw_angular_rate;
+static axis1bit16_t data_raw_temperature;
+static float acceleration_mg[3];
+static float angular_rate_mdps[3];
+static float temperature_degC;
+static uint8_t whoamI, rst;
+static lsm6dsl_ctx_t dev_ctx;
+static lsm6dsl_int1_route_t interrupt_cfg;
+
+
+void int1_cb(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action) {
+      
+      uint8_t stepcount = 0;
+      lsm6dsl_pedo_sens_get(&dev_ctx, &stepcount);
+      NRF_LOG_INFO("%d", stepcount);
+      NRF_LOG_FLUSH();
+}
 
 void timer_sync_event_handler(nrf_timer_event_t event_type, void* p_context)
 {
     switch (event_type)
     {
         case NRF_TIMER_EVENT_COMPARE0:
-            if (m_bh1792.prm.msr <= BH1792_PRM_MSR_1024HZ) {
-            m_bh1792.send_sync();
+            if(ctr == 4)
+            {
+              if (m_bh1792.prm.msr <= BH1792_PRM_MSR_1024HZ) {
+              m_bh1792.send_sync();
+          
 
-            if (m_bh1792.sync_seq < 3) {
-              if (m_bh1792.sync_seq != 1) {
-                m_bh1792.clear_fifo();
+              if (m_bh1792.sync_seq < 3) {
+                if (m_bh1792.sync_seq != 1) {
+                  m_bh1792.clear_fifo();
+                }
+               }
               }
+              ctr = 0;
             }
+            if(m_bh1792.prm.msr <= BH1792_PRM_MSR_1024HZ) {
+              m_bh1792.get_measurement_data();
+              nrfx_gpiote_out_toggle(BSP_LED_2);
+              for (int i = 0; i < m_bh1792.m_dat.fifo_lev; i++) {
+                uint16_t dat = (m_bh1792.m_dat.fifo[i].on - m_bh1792.m_dat.fifo[i].off);
+                //uint16_t dat = m_bh1792.m_dat.fifo[i].on;
+                uint8_t ret = nrf_atfifo_alloc_put(sample_fifo,&dat,2U,NULL);
+                if(ret == 4)
+                {
+                  nrfx_gpiote_out_toggle(BSP_LED_0);
+                }
+              }
+              m_bh1792.clear_fifo();
+              ctr++;
             }
-            else {
-                m_bh1792.start_measurement();
-            }
+            
             break;
-
         default:
             //Do nothing.
             break;
@@ -1018,30 +1062,16 @@ void timer_sync_event_handler(nrf_timer_event_t event_type, void* p_context)
 }
 
 
+
 void in_pin_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
-    int32_t ret = 0;
-
-    m_bh1792.get_measurement_data();
-
-    samples = std::vector<float>();
-
-    if(m_bh1792.prm.msr <= BH1792_PRM_MSR_1024HZ) {
-      for (int i = 0; i < m_bh1792.m_dat.fifo_lev; i++) {
-        samples.push_back((float)(m_bh1792.m_dat.fifo[i].on - m_bh1792.m_dat.fifo[i].off));
-      }
-    }
-
-    invalidate = true;
-
-
-    //nrfx_gpiote_out_clear(BSP_LED_0);
+     nrfx_gpiote_out_toggle(BSP_LED_1);
 }
 
 
 
 void button_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action){
-    nrfx_gpiote_out_toggle(BSP_LED_0);
+    nrfx_gpiote_out_toggle(BSP_LED_2);
     //nrfx_gpiote_out_set(BSP_LED_0);
     //bh1792glc.clear_interrupt();
 }
@@ -1060,6 +1090,12 @@ static void gpio_init(){
     nrfx_gpiote_out_config_t out_config = GPIOTE_CONFIG_OUT_SIMPLE(false);
 
     err_code = nrfx_gpiote_out_init(BSP_LED_0, &out_config);
+    APP_ERROR_CHECK(err_code);
+
+    err_code = nrfx_gpiote_out_init(BSP_LED_1, &out_config);
+    APP_ERROR_CHECK(err_code);
+
+    err_code = nrfx_gpiote_out_init(BSP_LED_2, &out_config);
     APP_ERROR_CHECK(err_code);
 
 
@@ -1133,7 +1169,20 @@ int main(void)
     twi_init();
     gpio_init();
 
-    m_bh1792 = BH1792GLC(&m_i2c);
+    dev_ctx.slv_adr = LSM6DSL_ID; 
+    dev_ctx.i2c = &m_i2c;
+
+    interrupt_cfg.int1_sign_mot = 1;
+
+    uint32_t err_code;
+    nrfx_gpiote_in_config_t in_config_lotohi = NRFX_GPIOTE_CONFIG_IN_SENSE_LOTOHI(false);
+    in_config_lotohi.pull = NRF_GPIO_PIN_PULLDOWN;
+    err_code = nrfx_gpiote_in_init(17, &in_config_lotohi, int1_cb);
+    APP_ERROR_CHECK(err_code);
+
+    nrfx_gpiote_in_event_enable(17, true);
+
+    /*m_bh1792 = BH1792GLC(&m_i2c);
 
     m_bh1792.init();
 
@@ -1142,58 +1191,155 @@ int main(void)
 
 
     m_bh1792.prm.sel_adc  = BH1792_PRM_SEL_ADC_GREEN;
-    m_bh1792.prm.msr      = BH1792_PRM_MSR_1024HZ;
-    m_bh1792.prm.led_en   = (BH1792_PRM_LED_EN1_0 << 1) | BH1792_PRM_LED_EN2_0;
-    m_bh1792.prm.led_cur1 = BH1792_PRM_LED_CUR1_MA(1);
-    m_bh1792.prm.led_cur2 = BH1792_PRM_LED_CUR2_MA(1);
-    m_bh1792.prm.ir_th    = 0xFFFC;
+    m_bh1792.prm.msr      = BH1792_PRM_MSR_128HZ;
+    m_bh1792.prm.led_en   = (BH1792_PRM_LED_EN1_0 << 1);// | BH1792_PRM_LED_EN2_0;
+    m_bh1792.prm.led_cur1 = 1;
+    m_bh1792.prm.led_cur2 = 0;
+    m_bh1792.prm.ir_th    = 2000;
     m_bh1792.prm.int_sel  = BH1792_PRM_INT_SEL_WTM;
+    m_bh1792.interrupt_handler = &in_pin_handler;
+    m_bh1792.p_int        = BH1792_INT_PIN;
     m_bh1792.configure();
-    
 
-    nrfx_gpiote_in_config_t in_config_hitolo = NRFX_GPIOTE_CONFIG_IN_SENSE_HITOLO(false);
-    in_config_hitolo.pull = NRF_GPIO_PIN_PULLUP;
-    err_code = nrfx_gpiote_in_init(BH1792_INT_PIN, &in_config_hitolo, in_pin_handler);
-    APP_ERROR_CHECK(err_code);
+    m_bh1792.clear_fifo();
 
-    nrfx_gpiote_in_event_enable(BH1792_INT_PIN, true);
+    NRF_ATFIFO_INIT(sample_fifo);
 
-    uint32_t time_ms = 1000; //Time(in miliseconds) between consecutive compare events.
+    uint32_t time_ms = 200U; //Time(in miliseconds) between consecutive compare events.
     uint32_t time_ticks;
 
     nrf_drv_timer_config_t timer_cfg = NRF_DRV_TIMER_DEFAULT_CONFIG;
-    err_code = nrf_drv_timer_init(&TIMER_SYNC, &timer_cfg, timer_sync_event_handler);
+    timer_cfg.interrupt_priority = 2;
+    err_code = nrfx_timer_init(&TIMER_SYNC, &timer_cfg, timer_sync_event_handler);
     APP_ERROR_CHECK(err_code);
 
-    time_ticks = nrf_drv_timer_ms_to_ticks(&TIMER_SYNC, time_ms);
+    time_ticks = nrfx_timer_ms_to_ticks(&TIMER_SYNC, time_ms);
 
-    m_bh1792.start_measurement();
-
-    nrf_drv_timer_extended_compare(
+    nrfx_timer_extended_compare(
          &TIMER_SYNC, NRF_TIMER_CC_CHANNEL0, time_ticks, NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, true);
 
-    nrf_drv_timer_enable(&TIMER_SYNC);
+    nrfx_timer_enable(&TIMER_SYNC);*/
+
+
+
+    whoamI = 0;
+    lsm6dsl_device_id_get(&dev_ctx, &whoamI);
+    if ( whoamI != LSM6DSL_ID )
+    {
+      NRF_LOG_INFO("IMU was not found!");
+      NRF_LOG_FLUSH();
+    }
+
+    //m_bh1792.start_measurement();
+
+    uint8_t fifo_ret = -1;
+
+    lsm6dsl_reset_set(&dev_ctx, PROPERTY_ENABLE);
+      do {
+        lsm6dsl_reset_get(&dev_ctx, &rst);
+    } while (rst);
+
+    //lsm6dsl_pedo_sens_set(&dev_ctx, PROPERTY_ENABLE);
+
+    lsm6dsl_block_data_update_set(&dev_ctx, PROPERTY_ENABLE);
+    /*
+     * Set Output Data Rate
+     */
+    lsm6dsl_xl_data_rate_set(&dev_ctx, LSM6DSL_XL_ODR_12Hz5);
+    lsm6dsl_gy_data_rate_set(&dev_ctx, LSM6DSL_GY_ODR_12Hz5);
+    /*
+     * Set full scale
+     */  
+    lsm6dsl_xl_full_scale_set(&dev_ctx, LSM6DSL_2g);
+    lsm6dsl_gy_full_scale_set(&dev_ctx, LSM6DSL_2000dps);
+  
+    /*
+     * Configure filtering chain(No aux interface)
+     */  
+    /* Accelerometer - analog filter */
+    lsm6dsl_xl_filter_analog_set(&dev_ctx, LSM6DSL_XL_ANA_BW_400Hz);
+  
+    /* Accelerometer - LPF1 path ( LPF2 not used )*/
+    //lsm6dsl_xl_lp1_bandwidth_set(&dev_ctx, LSM6DSL_XL_LP1_ODR_DIV_4);
+  
+    /* Accelerometer - LPF1 + LPF2 path */   
+    lsm6dsl_xl_lp2_bandwidth_set(&dev_ctx, LSM6DSL_XL_LOW_NOISE_LP_ODR_DIV_100);
+  
+    /* Accelerometer - High Pass / Slope path */
+    //lsm6dsl_xl_reference_mode_set(&dev_ctx, PROPERTY_DISABLE);
+    //lsm6dsl_xl_hp_bandwidth_set(&dev_ctx, LSM6DSL_XL_HP_ODR_DIV_100);
+  
+    /* Gyroscope - filtering chain */
+    lsm6dsl_gy_band_pass_set(&dev_ctx, LSM6DSL_HP_260mHz_LP1_STRONG);
+
+    lsm6dsl_motion_sens_set(&dev_ctx, PROPERTY_ENABLE);
+
+    uint8_t buff = 0;
+
+    lsm6dsl_motion_threshold_set(&dev_ctx, &buff);
+
+    uint8_t ret = lsm6dsl_pin_int1_route_set(&dev_ctx, &interrupt_cfg);
+    
 
     while (true)
     {
-        __WFI();
         
+        __WFI();
+        //NRF_LOG_FLUSH();
 
-        if(invalidate)
+        /*uint16_t fifo_data = 0;
+        fifo_ret = nrf_atfifo_get_free(sample_fifo,&fifo_data,2U,NULL);
+        if(fifo_ret == 0)
         {
-          for(int i = 0; i < samples.size(); i++)
-          {
-              NRF_LOG_INFO("%d",samples[i]);
-          }
-          invalidate = false;
-        }
+          NRF_LOG_INFO("%d",fifo_data);
+          NRF_LOG_FLUSH();
+        }*/
 
-        NRF_LOG_FLUSH();
+    
+        /*lsm6dsl_reg_t reg;
+        lsm6dsl_status_reg_get(&dev_ctx, &reg.status_reg);
+
+        if (reg.status_reg.xlda)
+        {
+          //Read magnetic field data
+          memset(data_raw_acceleration.u8bit, 0x00, 3*sizeof(int16_t));
+          lsm6dsl_acceleration_raw_get(&dev_ctx, data_raw_acceleration.u8bit);
+          acceleration_mg[0] = lsm6dsl_from_fs2g_to_mg( data_raw_acceleration.i16bit[0]);
+          acceleration_mg[1] = lsm6dsl_from_fs2g_to_mg( data_raw_acceleration.i16bit[1]);
+          acceleration_mg[2] = lsm6dsl_from_fs2g_to_mg( data_raw_acceleration.i16bit[2]);
+      
+          NRF_LOG_INFO("Acceleration [mg]:%4.2f\t%4.2f\t%4.2f\r\n",
+                  acceleration_mg[0], acceleration_mg[1], acceleration_mg[2]);
+          NRF_LOG_FLUSH();
+        } 
+        if (reg.status_reg.gda)
+        {
+          //Read magnetic field data
+          memset(data_raw_angular_rate.u8bit, 0x00, 3*sizeof(int16_t));
+          lsm6dsl_angular_rate_raw_get(&dev_ctx, data_raw_angular_rate.u8bit);
+          angular_rate_mdps[0] = lsm6dsl_from_fs2000dps_to_mdps(data_raw_angular_rate.i16bit[0]);
+          angular_rate_mdps[1] = lsm6dsl_from_fs2000dps_to_mdps(data_raw_angular_rate.i16bit[1]);
+          angular_rate_mdps[2] = lsm6dsl_from_fs2000dps_to_mdps(data_raw_angular_rate.i16bit[2]);
+      
+          NRF_LOG_INFO("Angular rate [mdps]:%4.2f\t%4.2f\t%4.2f\r\n",
+                  angular_rate_mdps[0], angular_rate_mdps[1], angular_rate_mdps[2]);
+          NRF_LOG_FLUSH();
+        }    
+        if (reg.status_reg.tda)
+        {   
+          //Read temperature data
+          memset(data_raw_temperature.u8bit, 0x00, sizeof(int16_t));
+          lsm6dsl_temperature_raw_get(&dev_ctx, data_raw_temperature.u8bit);
+          temperature_degC = lsm6dsl_from_lsb_to_celsius( data_raw_temperature.i16bit );
+       
+          NRF_LOG_INFO("Temperature [degC]:%6.2f\r\n", temperature_degC );
+          NRF_LOG_FLUSH();
+        }*/
 
 
-        /*m_sample = bh1792glc.single_measurement();
-        NRF_LOG_INFO("%d", m_sample);
-        NRF_LOG_FLUSH();*/
+        /*__set_FPSCR(__get_FPSCR() & ~(FPU_EXCEPTION_MASK));
+        (void) __get_FPSCR();
+        NVIC_ClearPendingIRQ(FPU_IRQn);*/
     }
 
 
