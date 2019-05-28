@@ -6,7 +6,7 @@
 #include "nrf_delay.h"
 #include "nrf_drv_timer.h"
 
-#include "I2C.h"
+#include "i2c.h"
 
 #include <stdint.h>
 
@@ -66,6 +66,7 @@ class BH1792GLC
         int8_t sync_seq;
         int8_t p_int;
         bh1792_data_t m_dat;
+        nrfx_gpiote_evt_handler_t interrupt_handler;
 
         BH1792GLC(I2C *_i2c);
         BH1792GLC();

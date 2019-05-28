@@ -4,6 +4,10 @@
 #include <iterator>
 
 
+#include "nrf_drv_gpiote.h"
+#include "nrfx_gpiote.h"
+
+
 BH1792GLC::BH1792GLC(I2C * _i2c) : m_i2c(_i2c) {}
 
 BH1792GLC::BH1792GLC(){}
@@ -18,7 +22,7 @@ int32_t BH1792GLC::init()
     uint8_t reg[1];
 
 
-    // Set inital register parameters
+    // Set inital regiser parameters
     this->prm.sel_adc  = BH1792_PRM_SEL_ADC_GREEN;
     this->prm.msr      = BH1792_PRM_MSR_32HZ;
     this->prm.led_en   = BH1792_PRM_LED_EN1_0;
@@ -42,6 +46,8 @@ int32_t BH1792GLC::init()
             ret_i2c = this->m_i2c->i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_RESET, reg, 1U);
         }
     }
+
+    this->p_int;
 
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
@@ -74,6 +80,17 @@ int32_t BH1792GLC::configure(void)
     ret_i2c = this->m_i2c->i2c_write(BH1792_SLAVE_ADDR, BH1792_ADDR_MEAS_CTRL1, reg, reg_size);
     if(ret_i2c != 0) {
         this->i2c_err = ret_i2c;
+    }
+
+    if(this->interrupt_handler != NULL  && this->p_int != -1)
+    {
+      uint32_t err_code;
+      nrfx_gpiote_in_config_t in_config_hitolo = NRFX_GPIOTE_CONFIG_IN_SENSE_HITOLO(false);
+      in_config_hitolo.pull = NRF_GPIO_PIN_PULLUP;
+      err_code = nrfx_gpiote_in_init(this->p_int, &in_config_hitolo, this->interrupt_handler);
+      APP_ERROR_CHECK(err_code);
+
+      nrfx_gpiote_in_event_enable(this->p_int, true);
     }
 
     return ret;
@@ -150,7 +167,7 @@ int32_t BH1792GLC::get_measurement_data()
 
     if(this->prm.msr <= BH1792_PRM_MSR_1024HZ) {
         ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_LEV, &m_dat.fifo_lev, 1U);
-        if(ret_i2c == 0) {
+         if (ret_i2c == 0)  {
             if(m_dat.fifo_lev == BH1792_PRM_FIFO_LEV_FULL) {
                 ret = BH1792_FIFO_FULL;
             }
@@ -269,16 +286,20 @@ int32_t BH1792GLC::get_fifo_data()
 
     ma_prm = &(this->ma_prm);
 
+    
+
     for(i = 0U; i < m_dat.fifo_lev; i++) {
-        ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_DATA0_LSBS, reg, 4U);
+        
+      ret_i2c = this->m_i2c->i2c_read(BH1792_SLAVE_ADDR, BH1792_ADDR_FIFO_DATA0_LSBS, reg, 4U);
         if(ret_i2c != 0) {
             break;
         }
+
         m_dat.fifo[i].off = ((uint16_t)reg[1] << 8) | (uint16_t)reg[0];
         m_dat.fifo[i].on  = ((uint16_t)reg[3] << 8) | (uint16_t)reg[2];
 
         
-        if(ma_prm->num == ma_prm->len) {
+        /*if(ma_prm->num == ma_prm->len) {
             ma_prm->sum.off -= ma_prm->buf[ma_prm->pos].off;
             ma_prm->sum.on  -= ma_prm->buf[ma_prm->pos].on;
         }
@@ -298,7 +319,7 @@ int32_t BH1792GLC::get_fifo_data()
         if(ma_prm->num > 0) {
             m_dat.fifo_lpf[i].off = ma_prm->sum.off / ma_prm->num;
             m_dat.fifo_lpf[i].on  = ma_prm->sum.on  / ma_prm->num;
-        }
+        }*/
     }
 
     return ret_i2c;
