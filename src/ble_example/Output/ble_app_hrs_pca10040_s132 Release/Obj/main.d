@@ -1,7 +1,8 @@
 Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  C:\Users\ledangaravi\Stuff\Programming\GitHub\remote-patient-monitoring\src\ble_example\main.cpp \
  C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdint.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_prolog.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h \
@@ -12,25 +13,14 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h \
- c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\string.h \
- c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\__crossworks.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/vector \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_prolog.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/debug/_debug.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_algobase.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_alloc.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstddef.h \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstddef \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stddef.h \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stddef.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstring.h \
- c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstring \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/using/cstring \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/climits \
- c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\climits \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/limits.h \
- c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\limits.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\__crossworks.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstdlib.h \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstdlib \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdlib.h \
@@ -39,6 +29,16 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cmath \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/math.h \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\math.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstring.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstring \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\string.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/using/cstring \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_algobase.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/climits \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\climits \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/limits.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\limits.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_pair.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/type_traits.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/type_manips.h \
@@ -48,8 +48,6 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_algobase.c \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_function_base.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_iterator.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_alloc.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_new.h \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\new \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/cstdlib \
@@ -61,10 +59,31 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stdio.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_construct.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_alloc.c \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string_fwd.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_iosfwd.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/char_traits.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cwchar.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cwchar \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/wchar.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\wchar.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_mbstate_t.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_uninitialized.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.c \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string_base.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string_npos.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string_operators.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string.c \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_ctraits_fns.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_function.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_function_adaptors.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_range_errors.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_range_errors.c \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string_hash.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_hash_fun.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/vector \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.c \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_bvector.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_relops_cont.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/iterator \
@@ -173,6 +192,10 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  ../../nRF5_SDK/components/ble/nrf_ble_qwr/nrf_ble_qwr.h \
  ../../nRF5_SDK/components/ble/common/ble_conn_state.h \
  ../../nRF5_SDK/components/libraries/atomic/nrf_atomic.h \
+ ../../nRF5_SDK/components/libraries/atomic_fifo/nrf_atfifo.h \
+ ../../nRF5_SDK/components/libraries/log/nrf_log_instance.h \
+ ../../nRF5_SDK/components/libraries/experimental_section_vars/nrf_section.h \
+ ../../nRF5_SDK/components/libraries/log/nrf_log_types.h \
  ../../nRF5_SDK/integration/nrfx/legacy/nrf_drv_gpiote.h \
  ../../nRF5_SDK/modules/nrfx/drivers/include/nrfx_gpiote.h \
  ../../nRF5_SDK/modules/nrfx/hal/nrf_gpiote.h \
@@ -184,18 +207,11 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  ../../nRF5_SDK/modules/nrfx/drivers/include/nrfx_timer.h \
  ../../nRF5_SDK/modules/nrfx/hal/nrf_timer.h \
  ../../nRF5_SDK/components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
- ../BH1792GLC/BH1792GLC.h ../BH1792GLC/BH1792GLC_registers.h ../I2C/I2C.h \
- ../BH1792GLC/BH1792GLC_registers.h ../I2C/i2c.h \
- ../LSM6DSL/LSM6DSLSensor.h ../LSM6DSL/LSM6DSL_acc_gyro_driver.h \
- ../LSM6DSL/MotionSensor.h ../LSM6DSL/Component.h ../LSM6DSL/GyroSensor.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/assert.h \
- c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\assert.h \
+ ../BH1792GLC/BH1792GLC.h ../BH1792GLC/BH1792GLC_registers.h ../I2C/i2c.h \
+ ../BH1792GLC/BH1792GLC_registers.h ../LSM6DSL/lsm6dsl_reg.h \
  ../../nRF5_SDK/components/libraries/log/nrf_log.h \
- ../../nRF5_SDK/components/libraries/experimental_section_vars/nrf_section.h \
  ../../nRF5_SDK/components/libraries/strerror/nrf_strerror.h \
  ../../nRF5_SDK/components/libraries/log/src/nrf_log_internal.h \
- ../../nRF5_SDK/components/libraries/log/nrf_log_instance.h \
- ../../nRF5_SDK/components/libraries/log/nrf_log_types.h \
  ../../nRF5_SDK/components/libraries/log/nrf_log_types.h \
  ../../nRF5_SDK/components/libraries/log/nrf_log_ctrl.h \
  ../../nRF5_SDK/components/libraries/log/src/nrf_log_ctrl_internal.h \
