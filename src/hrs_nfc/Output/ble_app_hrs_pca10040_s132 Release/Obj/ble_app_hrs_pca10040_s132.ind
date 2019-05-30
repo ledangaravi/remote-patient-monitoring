@@ -112,6 +112,7 @@
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/BH1792GLC.o"
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/i2c.o"
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/lsm6dsl_reg.o"
+"Output/ble_app_hrs_pca10040_s132 Release/Obj/imu_service.o"
 "C:/Installed/SEGGER/SEGGER Embedded Studio for ARM 4.16/lib/libdebugio_mempoll_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
 "C:/Installed/SEGGER/SEGGER Embedded Studio for ARM 4.16/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
 "C:/Installed/SEGGER/SEGGER Embedded Studio for ARM 4.16/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a"

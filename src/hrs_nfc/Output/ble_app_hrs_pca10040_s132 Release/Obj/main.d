@@ -1,8 +1,36 @@
 Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  C:\Users\ledangaravi\Stuff\Programming\GitHub\remote-patient-monitoring\src\hrs_nfc\main.cpp \
+ c:\users\ledangaravi\stuff\programming\github\remote-patient-monitoring\src\imu_service\imu_service.h \
  C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdint.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_prolog.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/nrf_svc.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/nrf_error.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_err.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_gap.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_hci.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_ranges.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_types.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_l2cap.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_gatt.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_gattc.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf52.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/core_cm4.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmInstr.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/cmsis_gcc.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmFunc.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmSimd.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/system_nrf52.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf52_bitfields.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf51_to_nrf52.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf52_name_change.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/compiler_abstraction.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_gatts.h \
+ ../../nRF5_SDK/components/ble/common/ble_srv_common.h \
+ C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdbool.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_types.h \
+ ../../nRF5_SDK/components/libraries/util/app_util.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stddef.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h \
@@ -13,14 +41,23 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stddef.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\__crossworks.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/compiler_abstraction.h \
+ ../../nRF5_SDK/components/libraries/util/nordic_common.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/nrf52/nrf_mbr.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/nrf_svc.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_gap.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/ble_gatt.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_prolog.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/debug/_debug.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_alloc.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstddef.h \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstddef \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stddef.h \
- c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stddef.h \
- c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\__crossworks.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstdlib.h \
  c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstdlib \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdlib.h \
@@ -79,8 +116,6 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_range_errors.c \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_string_hash.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_hash_fun.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
- C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/vector \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.h \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.c \
@@ -89,50 +124,16 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/iterator \
  C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stream_iterator.h \
  ../../nRF5_SDK/components/libraries/util/nordic_common.h \
- ../../nRF5_SDK/modules/nrfx/mdk/nrf.h \
- ../../nRF5_SDK/modules/nrfx/mdk/nrf52.h \
- ../../nRF5_SDK/components/toolchain/cmsis/include/core_cm4.h \
- ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmInstr.h \
- ../../nRF5_SDK/components/toolchain/cmsis/include/cmsis_gcc.h \
- ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmFunc.h \
- ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmSimd.h \
- ../../nRF5_SDK/modules/nrfx/mdk/system_nrf52.h \
- ../../nRF5_SDK/modules/nrfx/mdk/nrf52_bitfields.h \
- ../../nRF5_SDK/modules/nrfx/mdk/nrf51_to_nrf52.h \
- ../../nRF5_SDK/modules/nrfx/mdk/nrf52_name_change.h \
- ../../nRF5_SDK/modules/nrfx/mdk/compiler_abstraction.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/nrf_sdm.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/nrf_svc.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/nrf_error.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/nrf_error_sdm.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/nrf_soc.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/nrf_error_soc.h \
  ../../nRF5_SDK/components/libraries/util/app_error.h \
- C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdbool.h \
  ../../nRF5_SDK/components/libraries/util/sdk_errors.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/nrf_error.h \
- ../../nRF5_SDK/components/libraries/util/nordic_common.h \
  ../../nRF5_SDK/components/libraries/util/app_error_weak.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_err.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_gap.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_hci.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_ranges.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_types.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_l2cap.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_gatt.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_gattc.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_gatts.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/ble_err.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/ble_hci.h \
- ../../nRF5_SDK/components/ble/common/ble_srv_common.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_types.h \
- ../../nRF5_SDK/components/libraries/util/app_util.h \
- ../../nRF5_SDK/modules/nrfx/mdk/compiler_abstraction.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/nrf52/nrf_mbr.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/nrf_svc.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_gap.h \
- ../../nRF5_SDK/components/softdevice/s132/headers/ble_gatt.h \
  ../../nRF5_SDK/components/ble/common/ble_advdata.h \
  ../../nRF5_SDK/components/libraries/util/sdk_common.h \
  ../config/sdk_config.h ../../nRF5_SDK/components/libraries/util/sdk_os.h \

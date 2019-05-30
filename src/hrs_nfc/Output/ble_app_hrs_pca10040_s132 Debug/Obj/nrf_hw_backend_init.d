@@ -1,50 +1,65 @@
 Output/ble_app_hrs_pca10040_s132\ Debug/Obj/nrf_hw_backend_init.o: \
- C:\Installed\Nordic\nRF5_SDK_15.3.0_59ac345\components\libraries\crypto\backend\nrf_hw\nrf_hw_backend_init.c \
- ../../../../../../components/libraries/util/sdk_common.h \
+ C:\Users\ledangaravi\Stuff\Programming\GitHub\remote-patient-monitoring\nRF5_SDK\components\libraries\crypto\backend\nrf_hw\nrf_hw_backend_init.c \
+ ../../nRF5_SDK/components/libraries/util/sdk_common.h \
  C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdint.h \
  C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdbool.h \
- C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/string.h \
- C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/__crossworks.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/user_config.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/compat.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/host.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_system.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\string.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\__crossworks.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
  ../config/sdk_config.h \
- ../../../../../../components/libraries/util/nordic_common.h \
- ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
- ../../../../../../components/libraries/util/sdk_os.h \
- ../../../../../../components/libraries/util/sdk_errors.h \
- ../../../../../../components/softdevice/s132/headers/nrf_error.h \
- ../../../../../../components/libraries/util/app_util.h \
- C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stddef.h \
- ../../../../../../modules/nrfx/mdk/nrf.h \
- ../../../../../../modules/nrfx/mdk/nrf52.h \
- ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
- ../../../../../../components/toolchain/cmsis/include/core_cmInstr.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h \
- ../../../../../../components/toolchain/cmsis/include/core_cmFunc.h \
- ../../../../../../components/toolchain/cmsis/include/core_cmSimd.h \
- ../../../../../../modules/nrfx/mdk/system_nrf52.h \
- ../../../../../../modules/nrfx/mdk/nrf52_bitfields.h \
- ../../../../../../modules/nrfx/mdk/nrf51_to_nrf52.h \
- ../../../../../../modules/nrfx/mdk/nrf52_name_change.h \
- ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
- ../../../../../../components/softdevice/s132/headers/nrf52/nrf_mbr.h \
- ../../../../../../components/softdevice/s132/headers/nrf_svc.h \
- ../../../../../../components/libraries/util/sdk_macros.h \
- ../../../../../../components/libraries/util/nrf_assert.h \
- ../../../../../../components/libraries/crypto/nrf_crypto_init.h \
- ../../../../../../components/libraries/experimental_section_vars/nrf_section.h \
- ../../../../../../components/libraries/util/nordic_common.h \
- ../../../../../../components/libraries/util/sdk_errors.h \
- ../../../../../../components/libraries/crypto/nrf_crypto_types.h \
- ../../../../../../components/libraries/crypto/nrf_crypto_rng.h \
- ../../../../../../components/libraries/crypto/nrf_crypto_error.h \
- ../../../../../../components/libraries/crypto/nrf_crypto_rng_shared.h \
- ../../../../../../components/libraries/crypto/nrf_crypto_rng_backend.h \
- ../../../../../../components/libraries/crypto/backend/cc310/cc310_backend_rng.h \
- ../../../../../../components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng.h \
- ../../../../../../components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng_mbedtls.h \
- ../../../../../../external/mbedtls/include/mbedtls/ctr_drbg.h \
- ../../../../../../external/mbedtls/include/mbedtls/aes.h \
- ../../../../../../external/nrf_tls/mbedtls/nrf_crypto/config/nrf_crypto_mbedtls_config.h \
- ../../../../../../external/mbedtls/include/mbedtls/check_config.h \
- C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/limits.h \
- ../../../../../../components/libraries/crypto/nrf_crypto_rng_shared.h \
- ../../../../../../components/libraries/crypto/backend/optiga/optiga_backend_rng.h
+ ../../nRF5_SDK/components/libraries/util/nordic_common.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/compiler_abstraction.h \
+ ../../nRF5_SDK/components/libraries/util/sdk_os.h \
+ ../../nRF5_SDK/components/libraries/util/sdk_errors.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/nrf_error.h \
+ ../../nRF5_SDK/components/libraries/util/app_util.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stddef.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stddef.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf52.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/core_cm4.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmInstr.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/cmsis_gcc.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmFunc.h \
+ ../../nRF5_SDK/components/toolchain/cmsis/include/core_cmSimd.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/system_nrf52.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf52_bitfields.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf51_to_nrf52.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/nrf52_name_change.h \
+ ../../nRF5_SDK/modules/nrfx/mdk/compiler_abstraction.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/nrf52/nrf_mbr.h \
+ ../../nRF5_SDK/components/softdevice/s132/headers/nrf_svc.h \
+ ../../nRF5_SDK/components/libraries/util/sdk_macros.h \
+ ../../nRF5_SDK/components/libraries/util/nrf_assert.h \
+ ../../nRF5_SDK/components/libraries/crypto/nrf_crypto_init.h \
+ ../../nRF5_SDK/components/libraries/experimental_section_vars/nrf_section.h \
+ ../../nRF5_SDK/components/libraries/util/nordic_common.h \
+ ../../nRF5_SDK/components/libraries/util/sdk_errors.h \
+ ../../nRF5_SDK/components/libraries/crypto/nrf_crypto_types.h \
+ ../../nRF5_SDK/components/libraries/crypto/nrf_crypto_rng.h \
+ ../../nRF5_SDK/components/libraries/crypto/nrf_crypto_error.h \
+ ../../nRF5_SDK/components/libraries/crypto/nrf_crypto_rng_shared.h \
+ ../../nRF5_SDK/components/libraries/crypto/nrf_crypto_rng_backend.h \
+ ../../nRF5_SDK/components/libraries/crypto/backend/cc310/cc310_backend_rng.h \
+ ../../nRF5_SDK/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng.h \
+ ../../nRF5_SDK/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng_mbedtls.h \
+ ../../nRF5_SDK/external/mbedtls/include/mbedtls/ctr_drbg.h \
+ ../../nRF5_SDK/external/mbedtls/include/mbedtls/aes.h \
+ ../../nRF5_SDK/external/nrf_tls/mbedtls/nrf_crypto/config/nrf_crypto_mbedtls_config.h \
+ ../../nRF5_SDK/external/mbedtls/include/mbedtls/check_config.h \
+ C:/Users/ledangaravi/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/limits.h \
+ c:\installed\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\limits.h \
+ ../../nRF5_SDK/components/libraries/crypto/nrf_crypto_rng_shared.h \
+ ../../nRF5_SDK/components/libraries/crypto/backend/optiga/optiga_backend_rng.h
