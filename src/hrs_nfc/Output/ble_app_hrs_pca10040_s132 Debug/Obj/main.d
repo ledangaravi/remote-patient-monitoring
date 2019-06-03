@@ -207,6 +207,11 @@ Output/ble_app_hrs_pca10040_s132\ Debug/Obj/main.o: \
  ../../nRF5_SDK/integration/nrfx/legacy/nrf_drv_timer.h \
  ../../nRF5_SDK/modules/nrfx/drivers/include/nrfx_timer.h \
  ../../nRF5_SDK/modules/nrfx/hal/nrf_timer.h \
+ ../../nRF5_SDK/components/nfc/t2t_lib/nfc_t2t_lib.h \
+ ../../nRF5_SDK/components/nfc/ndef/launchapp/nfc_launchapp_msg.h \
+ ../../nRF5_SDK/components/nfc/ndef/generic/message/nfc_ndef_msg.h \
+ ../../nRF5_SDK/components/nfc/ndef/generic/record/nfc_ndef_record.h \
+ ../../nRF5_SDK/components/libraries/hardfault/hardfault.h \
  ../../nRF5_SDK/components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
  ../BH1792GLC/BH1792GLC.h ../BH1792GLC/BH1792GLC_registers.h ../I2C/i2c.h \
  ../BH1792GLC/BH1792GLC_registers.h ../LSM6DSL/lsm6dsl_reg.h \

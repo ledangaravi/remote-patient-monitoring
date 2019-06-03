@@ -96,6 +96,7 @@
       <file file_name="../../nRF5_SDK/modules/nrfx/drivers/src/nrfx_uarte.c" />
       <file file_name="../../nRF5_SDK/modules/nrfx/drivers/src/nrfx_twim.c" />
       <file file_name="../../nRF5_SDK/modules/nrfx/drivers/src/nrfx_timer.c" />
+      <file file_name="../../nRF5_SDK/modules/nrfx/drivers/src/nrfx_nfct.c" />
     </folder>
     <folder Name="Board Definition">
       <file file_name="../../nRF5_SDK/components/boards/boards.c" />
@@ -200,7 +201,7 @@
       debug_type_file="$(StudioDir)/bin/STLport.xml"
       link_include_standard_libraries="Yes"
       link_standard_libraries_directory="$(StudioDir)/lib"
-      linker_section_placement_file="$(ProjectDir)/flash_placement.xml"
+      linker_section_placement_file="flash_placement.xml"
       macros="CMSIS_CONFIG_TOOL=../../nRF5_SDK/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar" />
     <folder Name="BH1792GLC">
       <file file_name="../BH1792GLC/BH1792GLC.cpp" />
@@ -218,6 +219,14 @@
     <folder Name="imu_service">
       <file file_name="../imu_service/imu_service.cpp" />
       <file file_name="../imu_service/imu_service.h" />
+    </folder>
+    <folder Name="nRF_NFC">
+      <file file_name="../../nRF5_SDK/components/nfc/ndef/launchapp/nfc_launchapp_msg.c" />
+      <file file_name="../../nRF5_SDK/components/nfc/ndef/launchapp/nfc_launchapp_rec.c" />
+      <file file_name="../../nRF5_SDK/components/nfc/ndef/generic/message/nfc_ndef_msg.c" />
+      <file file_name="../../nRF5_SDK/components/nfc/ndef/generic/record/nfc_ndef_record.c" />
+      <file file_name="../../nRF5_SDK/components/nfc/platform/nfc_platform.c" />
+      <file file_name="../../nRF5_SDK/components/nfc/t2t_lib/nfc_t2t_lib_gcc.a" />
     </folder>
   </project>
   <configuration
