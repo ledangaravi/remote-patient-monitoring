@@ -46,7 +46,7 @@
  * @ref srvlib_conn_params module.
  */
 
-#include "imu_service.h"
+#include "p24_service.h"
 
 #include <stdint.h>
 #include <string>
@@ -192,7 +192,7 @@ static sensorsim_state_t m_heart_rate_sim_state;                    /**< Heart R
 static sensorsim_cfg_t   m_rr_interval_sim_cfg;                     /**< RR Interval sensor simulator configuration. */
 static sensorsim_state_t m_rr_interval_sim_state;                   /**< RR Interval sensor simulator state. */
 
-ble_imu_t m_imu_service;
+ble_p24_t m_p24_service;
 
 static ble_uuid_t m_adv_uuids[] =                                   /**< Universally unique service identifiers. */
 {
@@ -200,7 +200,7 @@ static ble_uuid_t m_adv_uuids[] =                                   /**< Univers
     {BLE_UUID_BATTERY_SERVICE,              BLE_UUID_TYPE_BLE},
     {BLE_UUID_DEVICE_INFORMATION_SERVICE,   BLE_UUID_TYPE_BLE},
     {BLE_UUID_HEALTH_THERMOMETER_SERVICE,   BLE_UUID_TYPE_BLE},
-    {BLE_UUID_IMU_SERVICE_UUID,             BLE_UUID_TYPE_VENDOR_BEGIN}
+    {BLE_UUID_P24_SERVICE_UUID,             BLE_UUID_TYPE_VENDOR_BEGIN}
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -688,7 +688,7 @@ static void services_init(void)
     APP_ERROR_CHECK(err_code);
 
     // Initialize IMU Service
-    imu_service_init(&m_imu_service);
+    p24_service_init(&m_p24_service);
 }
 
 
@@ -952,7 +952,7 @@ static void ble_stack_init(void)
 
     
     //OUR_JOB: Step 3.C Call ble_our_service_on_ble_evt() to do housekeeping of ble connections related to our service and characteristics
-    NRF_SDH_BLE_OBSERVER(m_imu_service_observer, APP_BLE_OBSERVER_PRIO, ble_imu_service_on_ble_evt, (void*) &m_imu_service);
+    NRF_SDH_BLE_OBSERVER(m_p24_service_observer, APP_BLE_OBSERVER_PRIO, ble_p24_service_on_ble_evt, (void*) &m_p24_service);
 }
 
 

@@ -1,6 +1,6 @@
 Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  C:\Users\ledangaravi\Stuff\Programming\GitHub\remote-patient-monitoring\src\hrs_nfc\main.cpp \
- ../imu_service/imu_service.h \
+ ../p24_service/p24_service.h \
  C:/Installed/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdint.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/ble.h \
  ../../nRF5_SDK/components/softdevice/s132/headers/nrf_svc.h \
