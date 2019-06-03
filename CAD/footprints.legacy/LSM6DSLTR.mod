@@ -1,0 +1,147 @@
+PCBNEW-LibModule-V1  
+# encoding utf-8
+Units mm
+$INDEX
+PQFN50P300X250X86-14N
+$EndINDEX
+$MODULE PQFN50P300X250X86-14N
+Po 0 0 0 15 00000000 00000000 ~~
+Li PQFN50P300X250X86-14N
+Cd 
+Sc 00000000
+At SMD
+Op 0 0 0
+.SolderMask 0
+.SolderPaste 0
+T0 -0.3106 -2.48979 1.00193 1.00193 0 0.05 N V 21 "PQFN50P300X250X86-14N"
+T1 0.325125 2.39097 1.0004 1.0004 0 0.05 N V 21 "VAL**"
+DS -1.55 -1.3 1.55 -1.3 0.127 27
+DS 1.55 -1.3 1.55 1.3 0.127 27
+DS 1.55 1.3 -1.55 1.3 0.127 27
+DS -1.55 1.3 -1.55 -1.3 0.127 27
+DS -1.8 -1.55 1.8 -1.55 0.05 26
+DS 1.8 -1.55 1.8 1.55 0.05 26
+DS 1.8 1.55 -1.8 1.55 0.05 26
+DS -1.8 1.55 -1.8 -1.55 0.05 26
+DC -2.25 -0.75 -2.15 -0.75 0.2 21
+DS 0.95 -1.3 1.55 -1.3 0.127 21
+DS -0.95 -1.3 -1.55 -1.3 0.127 21
+DS -1.55 1.3 -0.95 1.3 0.127 21
+DS -1.55 1.3 -1.55 1.2 0.127 21
+DS 0.95 1.3 1.55 1.3 0.127 21
+DS 1.55 1.3 1.55 1.2 0.127 21
+DS -1.55 -1.2 -1.55 -1.3 0.127 21
+DS 1.55 -1.2 1.55 -1.3 0.127 21
+$PAD
+Sh "14" R 0.61 0.35 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -0.5 -0.91
+$EndPAD
+$PAD
+Sh "13" R 0.61 0.35 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 0 -0.91
+$EndPAD
+$PAD
+Sh "12" R 0.61 0.35 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 0.5 -0.91
+$EndPAD
+$PAD
+Sh "11" R 0.61 0.35 0 0 1800
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 1.16 -0.75
+$EndPAD
+$PAD
+Sh "10" R 0.61 0.35 0 0 1800
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 1.16 -0.25
+$EndPAD
+$PAD
+Sh "9" R 0.61 0.35 0 0 1800
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 1.16 0.25
+$EndPAD
+$PAD
+Sh "8" R 0.61 0.35 0 0 1800
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 1.16 0.75
+$EndPAD
+$PAD
+Sh "5" R 0.61 0.35 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -0.5 0.91
+$EndPAD
+$PAD
+Sh "6" R 0.61 0.35 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 0 0.91
+$EndPAD
+$PAD
+Sh "7" R 0.61 0.35 0 0 900
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 0.5 0.91
+$EndPAD
+$PAD
+Sh "1" R 0.61 0.35 0 0 1800
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -1.16 -0.75
+$EndPAD
+$PAD
+Sh "2" R 0.61 0.35 0 0 1800
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -1.16 -0.25
+$EndPAD
+$PAD
+Sh "3" R 0.61 0.35 0 0 1800
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -1.16 0.25
+$EndPAD
+$PAD
+Sh "4" R 0.61 0.35 0 0 1800
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -1.16 0.75
+$EndPAD
+$EndMODULE PQFN50P300X250X86-14N

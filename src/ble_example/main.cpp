@@ -93,8 +93,8 @@ extern "C" {
   #include "nrf_pwr_mgmt.h"
 }
 
-#include "BH1792GLC.h"
-#include "BH1792GLC_registers.h"
+//#include "BH1792GLC.h"
+//#include "BH1792GLC_registers.h"
 
 #include "i2c.h"
 #include "lsm6dsl_reg.h"
@@ -970,7 +970,7 @@ static void idle_state_handle(void)
     }
 }
 
-/**************************************************************************************************/
+/**************************************************Peter here************************************************/
 
 
 #define BH1792_INT_PIN     11
@@ -980,9 +980,9 @@ static void idle_state_handle(void)
 
 
 /* TWI instance. */
-static const nrfx_twim_t m_twi = NRFX_TWIM_INSTANCE(TWI_INSTANCE_ID);
+static nrfx_twim_t m_twi = NRFX_TWIM_INSTANCE(TWI_INSTANCE_ID); //removed const
 
-static const I2C m_i2c = I2C(&m_twi);
+static I2C m_i2c = I2C(&m_twi); 
 
 static const nrfx_timer_t TIMER_SYNC = NRF_DRV_TIMER_INSTANCE(0);
 
@@ -997,8 +997,8 @@ NRF_ATFIFO_DEF(sample_fifo, uint16_t, 15360U);
 /* Buffer for samples read from temperature sensor. */
 static uint32_t m_sample = 0;
 
-BH1792GLC m_bh1792;
-bh1792_data_t m_bh1792_dat;
+//BH1792GLC m_bh1792;
+//bh1792_data_t m_bh1792_dat;
 
 static axis3bit16_t data_raw_acceleration;
 static axis3bit16_t data_raw_angular_rate;
@@ -1007,9 +1007,210 @@ static float acceleration_mg[3];
 static float angular_rate_mdps[3];
 static float temperature_degC;
 static uint8_t whoamI, rst;
-static lsm6dsl_ctx_t dev_ctx;
-static lsm6dsl_int1_route_t interrupt_cfg;
+static lsm6dsl_ctx_t dev_ctx; //device
+//static lsm6dsl_int1_route_t interrupt_cfg;
+static lsm6dsl_int1_route_t step;
+lsm6dsl_ctrl10_c_t enable_func;
+lsm6dsl_ctrl10_c_t enable_ped;
+//static lsm6dsl_func_cfg_en_t enable_fn;
 
+
+static lsm6dsl_func_cfg_access_t access_me;
+
+/************************************************************SH*****************************************************/
+static float _x_last_odr = 104.0f;
+static uint8_t _x_is_enabled = 0;
+
+int set_x_odr_when_enabled (float odr){ //output data rate
+	int32_t ret = 1;
+	lsm6dsl_odr_xl_t new_odr;	  
+  
+	new_odr = ( odr <=   13.0f ) ? LSM6DSL_XL_ODR_12Hz5
+		  : ( odr <=   26.0f ) ? LSM6DSL_XL_ODR_26Hz
+		  : ( odr <=   52.0f ) ? LSM6DSL_XL_ODR_52Hz
+		  : ( odr <=  104.0f ) ? LSM6DSL_XL_ODR_104Hz
+		  : ( odr <=  208.0f ) ? LSM6DSL_XL_ODR_208Hz
+		  : ( odr <=  416.0f ) ? LSM6DSL_XL_ODR_416Hz
+		  : ( odr <=  833.0f ) ? LSM6DSL_XL_ODR_833Hz
+		  : ( odr <= 1660.0f ) ? LSM6DSL_XL_ODR_1k66Hz
+		  : ( odr <= 3330.0f ) ? LSM6DSL_XL_ODR_3k33Hz
+		  :                      LSM6DSL_XL_ODR_6k66Hz;
+            
+  if ( lsm6dsl_xl_data_rate_set(&dev_ctx, new_odr ) == ret ) //ret should be like MEMS_ERROR in this version.
+  {
+    return 1;
+  }
+  
+  return 0;
+}
+
+int set_x_odr_when_disabled (float odr)
+{ 
+  _x_last_odr = ( odr <=   13.0f ) ? 13.0f
+             : ( odr <=   26.0f ) ? 26.0f
+             : ( odr <=   52.0f ) ? 52.0f
+             : ( odr <=  104.0f ) ? 104.0f
+             : ( odr <=  208.0f ) ? 208.0f
+             : ( odr <=  416.0f ) ? 416.0f
+             : ( odr <=  833.0f ) ? 833.0f
+             : ( odr <= 1660.0f ) ? 1660.0f
+             : ( odr <= 3330.0f ) ? 3330.0f
+             :                      6660.0f;
+                                 
+  return 0;
+}
+
+int set_x_odr(float odr)
+{
+int32_t ret = 1;
+  if(_x_is_enabled == 1)
+  {
+    if(set_x_odr_when_enabled(odr) == 1) 
+    {
+      return 1;
+    }
+  }
+  else
+  {
+    if(set_x_odr_when_disabled(odr) == 1) 
+    {
+      return 1;
+    }
+  }
+  
+  return 0;
+}
+
+int set_x_fs(float fullScale)
+{
+int32_t ret = 1;
+  lsm6dsl_fs_xl_t new_fs;
+  
+  new_fs = ( fullScale <= 2.0f ) ? LSM6DSL_2g
+         : ( fullScale <= 4.0f ) ? LSM6DSL_4g
+         : ( fullScale <= 8.0f ) ? LSM6DSL_8g
+         :                         LSM6DSL_16g;
+           
+  if ( lsm6dsl_xl_full_scale_set( &dev_ctx, new_fs ) == ret)
+  {
+    return 1;
+  }
+  
+  return 0;
+}
+
+
+
+
+
+int enable_x(void) {
+
+  int32_t ret = 1;
+   if ( _x_is_enabled == 1 )
+  {
+    return 0;
+  }
+  
+  /* Output data rate selection. */
+  if ( set_x_odr_when_enabled( _x_last_odr ) == 1 )
+  {
+    return 1;
+  }
+  
+  _x_is_enabled = 1;
+  
+  return 0;	
+}
+
+int set_pedometer_threshold(uint8_t ped_thresh)
+{
+int32_t ret = 1;
+  if (lsm6dsl_pedo_threshold_set( &dev_ctx, ped_thresh) == ret)
+  {
+    return 1;
+  }
+  
+  return 0;
+}
+
+
+int enable_pedometer(void)
+{
+  int32_t ret = 1;
+  /* Output Data Rate selection */
+  if( set_x_odr(26.0f) == 1 )
+  {
+    return 1;
+  }
+  
+  /* Full scale selection. */
+  if( set_x_fs(2.0f) == 1 )
+  {
+    return 1;
+  }
+  
+  /* Set pedometer threshold. */
+  if (set_pedometer_threshold(LSM6DSL_PEDOMETER_THRESHOLD_LOW) == 1)
+  {
+    return 1;
+  }
+  
+  //Enable embedded functionalities. 
+  if ( LSM6DSL_ACC_GYRO_W_FUNC_EN( (void *)this, LSM6DSL_ACC_GYRO_FUNC_EN_ENABLED ) == MEMS_ERROR )
+  {
+    return 1;
+	
+	typedef enum {
+  LSM6DSL_USER_BANK   = 0,
+  LSM6DSL_BANK_A      = 4,
+  LSM6DSL_BANK_B      = 5,
+  LSM6DSL_BANK_ND     = 6,    // ERROR CODE 
+} lsm6dsl_func_cfg_en_t;
+  }
+ 
+/*
+  lsm6dsl_func_cfg_en_t enable_fn = LSM6DSL_BANK_A;
+
+
+    if (lsm6dsl_mem_bank_set(&dev_ctx, enable_fn) == ret) //right def? line 1153 in .c
+  {
+    return 1;
+  }*/
+  
+  enable_func.func_en = 1;
+
+    if ( lsm6dsl_pedo_sens_set(&dev_ctx, 1) == ret ) //uint8_t pedo_en == 1
+  {
+    return 1;
+  }
+
+  /* Enable pedometer algorithm. 
+  if ( LSM6DSL_ACC_GYRO_W_PEDO( (void *)this, LSM6DSL_ACC_GYRO_PEDO_ENABLED ) == MEMS_ERROR )
+  {
+    return 1;
+  }*/
+  enable_ped.pedo_en = 1;
+    if ( lsm6dsl_pedo_sens_set(&dev_ctx, (uint8_t)&enable_ped) == ret ) //uint8_t pedo_en == 1
+  {
+    return 1;
+  }
+  /* Enable pedometer on INT1. 
+  if ( LSM6DSL_ACC_GYRO_W_STEP_DET_on_INT1( (void *)this, LSM6DSL_ACC_GYRO_INT1_PEDO_ENABLED ) == MEMS_ERROR )
+  {
+    return 1;
+  }*/
+  step.int1_step_detector = 1;
+  if(lsm6dsl_pin_int1_route_set(&dev_ctx, &step) == ret)
+  {
+	return 1;
+  }
+  
+  return 0;
+}
+
+
+
+/***callback peter*** like int1_cb()*/
 
 void int1_cb(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action) {
       
@@ -1019,7 +1220,7 @@ void int1_cb(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action) {
       NRF_LOG_FLUSH();
 }
 
-void timer_sync_event_handler(nrf_timer_event_t event_type, void* p_context)
+/*void timer_sync_event_handler(nrf_timer_event_t event_type, void* p_context) //not used
 {
     switch (event_type)
     {
@@ -1059,7 +1260,7 @@ void timer_sync_event_handler(nrf_timer_event_t event_type, void* p_context)
             //Do nothing.
             break;
     }
-}
+}*/
 
 
 
@@ -1070,11 +1271,6 @@ void in_pin_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 
 
 
-void button_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action){
-    nrfx_gpiote_out_toggle(BSP_LED_2);
-    //nrfx_gpiote_out_set(BSP_LED_0);
-    //bh1792glc.clear_interrupt();
-}
 
 
 static void gpio_init(){
@@ -1097,16 +1293,6 @@ static void gpio_init(){
 
     err_code = nrfx_gpiote_out_init(BSP_LED_2, &out_config);
     APP_ERROR_CHECK(err_code);
-
-
-    //button
-    nrfx_gpiote_in_config_t in_config = NRFX_GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
-    in_config.pull = NRF_GPIO_PIN_PULLUP;
-
-    err_code = nrfx_gpiote_in_init(BSP_BUTTON_1, &in_config, &button_handler);
-    APP_ERROR_CHECK(err_code);
-    
-    nrfx_gpiote_in_event_enable(BSP_BUTTON_1, true);
 
 }
 
@@ -1162,17 +1348,47 @@ int main(void)
     {
         idle_state_handle();
     }*/
+    access_me.func_cfg_en=3;
 
+
+    dev_ctx.slv_adr = LSM6DSL_ID; 
+    dev_ctx.i2c = &m_i2c;
     NRF_LOG_INFO("hello from nrf52dk");
     NRF_LOG_FLUSH();
 
     twi_init();
     gpio_init();
 
-    dev_ctx.slv_adr = LSM6DSL_ID; 
-    dev_ctx.i2c = &m_i2c;
+   //int32_t err_codetx, err_coderx;
+   uint8_t whoami = LSM6DSL_WHO_AM_I;
+   uint8_t correct;
+   nrfx_err_t hi, hi2;
+   hi = nrfx_twim_tx ( &m_twi, LSM6DSL_ID, &whoami, 1, false);
+   APP_ERROR_CHECK(hi);
+   hi2 = nrfx_twim_rx ( &m_twi, LSM6DSL_ID, &whoami, 1); 
+   APP_ERROR_CHECK(hi2);
 
-    interrupt_cfg.int1_sign_mot = 1;
+correct = whoami;
+      NRF_LOG_INFO("value is %d", correct);
+      NRF_LOG_FLUSH();
+  whoamI = 0;
+  lsm6dsl_device_id_get(&dev_ctx, &whoamI);
+
+    if ( whoamI != LSM6DSL_ID )
+    {
+      NRF_LOG_INFO("IMU was not found!");
+      NRF_LOG_INFO("%d", whoamI);
+      NRF_LOG_FLUSH();
+    }
+
+    //m_bh1792.start_measurement();
+    enable_x();
+    enable_pedometer(); 
+
+
+
+
+    //interrupt_cfg.int1_sign_mot = 1;
 
     uint32_t err_code;
     nrfx_gpiote_in_config_t in_config_lotohi = NRFX_GPIOTE_CONFIG_IN_SENSE_LOTOHI(false);
@@ -1222,18 +1438,9 @@ int main(void)
 
 
 
-    whoamI = 0;
-    lsm6dsl_device_id_get(&dev_ctx, &whoamI);
-    if ( whoamI != LSM6DSL_ID )
-    {
-      NRF_LOG_INFO("IMU was not found!");
-      NRF_LOG_FLUSH();
-    }
-
-    //m_bh1792.start_measurement();
 
     uint8_t fifo_ret = -1;
-
+/*
     lsm6dsl_reset_set(&dev_ctx, PROPERTY_ENABLE);
       do {
         lsm6dsl_reset_get(&dev_ctx, &rst);
@@ -1241,44 +1448,48 @@ int main(void)
 
     //lsm6dsl_pedo_sens_set(&dev_ctx, PROPERTY_ENABLE);
 
-    lsm6dsl_block_data_update_set(&dev_ctx, PROPERTY_ENABLE);
+    //lsm6dsl_block_data_update_set(&dev_ctx, PROPERTY_ENABLE);
     /*
      * Set Output Data Rate
      */
+     /*
     lsm6dsl_xl_data_rate_set(&dev_ctx, LSM6DSL_XL_ODR_12Hz5);
     lsm6dsl_gy_data_rate_set(&dev_ctx, LSM6DSL_GY_ODR_12Hz5);
     /*
      * Set full scale
-     */  
+     */ /* 
     lsm6dsl_xl_full_scale_set(&dev_ctx, LSM6DSL_2g);
     lsm6dsl_gy_full_scale_set(&dev_ctx, LSM6DSL_2000dps);
   
     /*
      * Configure filtering chain(No aux interface)
      */  
-    /* Accelerometer - analog filter */
+    /* Accelerometer - analog filter *//*
     lsm6dsl_xl_filter_analog_set(&dev_ctx, LSM6DSL_XL_ANA_BW_400Hz);
   
     /* Accelerometer - LPF1 path ( LPF2 not used )*/
     //lsm6dsl_xl_lp1_bandwidth_set(&dev_ctx, LSM6DSL_XL_LP1_ODR_DIV_4);
   
-    /* Accelerometer - LPF1 + LPF2 path */   
+    /* Accelerometer - LPF1 + LPF2 path */ /*  
     lsm6dsl_xl_lp2_bandwidth_set(&dev_ctx, LSM6DSL_XL_LOW_NOISE_LP_ODR_DIV_100);
   
     /* Accelerometer - High Pass / Slope path */
     //lsm6dsl_xl_reference_mode_set(&dev_ctx, PROPERTY_DISABLE);
     //lsm6dsl_xl_hp_bandwidth_set(&dev_ctx, LSM6DSL_XL_HP_ODR_DIV_100);
   
-    /* Gyroscope - filtering chain */
+    /* Gyroscope - filtering chain *//*
     lsm6dsl_gy_band_pass_set(&dev_ctx, LSM6DSL_HP_260mHz_LP1_STRONG);
 
-    lsm6dsl_motion_sens_set(&dev_ctx, PROPERTY_ENABLE);
+    /*lsm6dsl_motion_sens_set(&dev_ctx, PROPERTY_ENABLE);
 
     uint8_t buff = 0;
 
     lsm6dsl_motion_threshold_set(&dev_ctx, &buff);
 
-    uint8_t ret = lsm6dsl_pin_int1_route_set(&dev_ctx, &interrupt_cfg);
+    uint8_t ret = lsm6dsl_pin_int1_route_set(&dev_ctx, &interrupt_cfg);*/
+
+  
+  
     
 
     while (true)
@@ -1344,5 +1555,4 @@ int main(void)
 
 
 }
-
 

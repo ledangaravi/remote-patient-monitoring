@@ -17,4 +17,6 @@
   (lib (name ADG884BRMZ)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/ADG884BRMZ.lib)(options "")(descr ""))
   (lib (name MAX86141ENP)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/MAX86141ENP.lib)(options "")(descr ""))
   (lib (name VEMD5010X01)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/VEMD5010X01.lib)(options "")(descr ""))
+  (lib (name "Molex - 51281-0594")(type Legacy)(uri "/home/udvpeter/remote-patient-monitoring/CAD/Molex - 51281-0594.lib")(options "")(descr ""))
+  (lib (name LSM6DSLTR)(type Legacy)(uri /home/udvpeter/remote-patient-monitoring/CAD/LSM6DSLTR.lib)(options "")(descr ""))
 )

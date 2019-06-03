@@ -23,7 +23,7 @@
 _GetAvailWriteSpace:
 .LVL0:
 .LFB185:
-	.file 1 "C:\\Users\\simon\\remote-patient-monitoring\\nRF5_SDK_15.3.0_59ac345\\external\\segger_rtt\\SEGGER_RTT.c"
+	.file 1 "/home/udvpeter/remote-patient-monitoring/nRF5_SDK_15.3.0_59ac345/external/segger_rtt/SEGGER_RTT.c"
 	.loc 1 485 66 view -0
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
@@ -3653,15 +3653,15 @@ _aTerminalId:
 .LEFDE58:
 	.text
 .Letext0:
-	.file 2 "C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 4.16/include/stdint.h"
+	.file 2 "/usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h"
 	.file 3 "../../nRF5_SDK_15.3.0_59ac345/components/toolchain/cmsis/include/core_cm4.h"
 	.file 4 "../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/mdk/system_nrf52.h"
 	.file 5 "../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_nvic.h"
-	.file 6 "c:\\program files\\segger\\segger embedded studio for arm 4.16\\include\\__crossworks.h"
-	.file 7 "c:\\program files\\segger\\segger embedded studio for arm 4.16\\include\\stdio.h"
-	.file 8 "C:\\Users\\simon\\remote-patient-monitoring\\nRF5_SDK_15.3.0_59ac345\\external\\segger_rtt\\SEGGER_RTT.h"
+	.file 6 "/usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h"
+	.file 7 "/usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h"
+	.file 8 "/home/udvpeter/remote-patient-monitoring/nRF5_SDK_15.3.0_59ac345/external/segger_rtt/SEGGER_RTT.h"
 	.file 9 "../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_util_platform.h"
-	.file 10 "c:\\program files\\segger\\segger embedded studio for arm 4.16\\include\\string.h"
+	.file 10 "/usr/share/segger_embedded_studio_for_arm_4.16/include/string.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
 	.4byte	0x1d37
@@ -11201,7 +11201,7 @@ _aTerminalId:
 	.byte	0x5
 	.uleb128 0x44
 	.4byte	.LASF470
-	.file 11 "C:\\Users\\simon\\remote-patient-monitoring\\nRF5_SDK_15.3.0_59ac345\\external\\segger_rtt\\SEGGER_RTT_Conf.h"
+	.file 11 "/home/udvpeter/remote-patient-monitoring/nRF5_SDK_15.3.0_59ac345/external/segger_rtt/SEGGER_RTT_Conf.h"
 	.byte	0x3
 	.uleb128 0x46
 	.uleb128 0xb
@@ -11372,28 +11372,28 @@ _aTerminalId:
 	.byte	0x5
 	.uleb128 0x32
 	.4byte	.LASF9579
-	.file 29 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stdio.h"
+	.file 29 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stdio.h"
 	.byte	0x3
 	.uleb128 0x36
 	.uleb128 0x1d
 	.byte	0x5
 	.uleb128 0x17
 	.4byte	.LASF9580
-	.file 30 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h"
+	.file 30 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h"
 	.byte	0x3
 	.uleb128 0x18
 	.uleb128 0x1e
 	.byte	0x5
 	.uleb128 0xf
 	.4byte	.LASF9581
-	.file 31 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h"
+	.file 31 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h"
 	.byte	0x3
 	.uleb128 0x12
 	.uleb128 0x1f
 	.byte	0x5
 	.uleb128 0x1b
 	.4byte	.LASF9582
-	.file 32 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h"
+	.file 32 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h"
 	.byte	0x3
 	.uleb128 0x2a
 	.uleb128 0x20
@@ -11402,12 +11402,12 @@ _aTerminalId:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro22
-	.file 33 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/user_config.h"
+	.file 33 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/user_config.h"
 	.byte	0x3
 	.uleb128 0x3f
 	.uleb128 0x21
 	.byte	0x4
-	.file 34 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/compat.h"
+	.file 34 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/compat.h"
 	.byte	0x3
 	.uleb128 0x58
 	.uleb128 0x22
@@ -11415,21 +11415,21 @@ _aTerminalId:
 	.uleb128 0x4a
 	.4byte	.LASF9591
 	.byte	0x4
-	.file 35 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/host.h"
+	.file 35 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/host.h"
 	.byte	0x3
 	.uleb128 0x5b
 	.uleb128 0x23
 	.byte	0x7
 	.4byte	.Ldebug_macro23
 	.byte	0x4
-	.file 36 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/_system.h"
+	.file 36 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/_system.h"
 	.byte	0x3
 	.uleb128 0x5e
 	.uleb128 0x24
 	.byte	0x5
 	.uleb128 0x27
 	.4byte	.LASF9594
-	.file 37 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h"
+	.file 37 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h"
 	.byte	0x3
 	.uleb128 0xa4
 	.uleb128 0x25
@@ -11437,7 +11437,7 @@ _aTerminalId:
 	.4byte	.Ldebug_macro24
 	.byte	0x4
 	.byte	0x4
-	.file 38 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h"
+	.file 38 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h"
 	.byte	0x3
 	.uleb128 0x67
 	.uleb128 0x26
@@ -11446,7 +11446,7 @@ _aTerminalId:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro26
-	.file 39 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h"
+	.file 39 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h"
 	.byte	0x3
 	.uleb128 0xda
 	.uleb128 0x27
@@ -11472,11 +11472,11 @@ _aTerminalId:
 	.byte	0x7
 	.4byte	.Ldebug_macro30
 	.byte	0x4
-	.file 40 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h"
+	.file 40 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h"
 	.byte	0x3
 	.uleb128 0x32
 	.uleb128 0x28
-	.file 41 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h"
+	.file 41 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h"
 	.byte	0x3
 	.uleb128 0x13
 	.uleb128 0x29
@@ -11491,7 +11491,7 @@ _aTerminalId:
 	.uleb128 0x33
 	.4byte	.LASF9789
 	.byte	0x4
-	.file 42 "C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 4.16/include/stdbool.h"
+	.file 42 "/usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h"
 	.byte	0x3
 	.uleb128 0x37
 	.uleb128 0x2a
@@ -11543,7 +11543,7 @@ _aTerminalId:
 	.byte	0x7
 	.4byte	.Ldebug_macro38
 	.byte	0x4
-	.file 46 "C:/Users/simon/AppData/Local/SEGGER/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/string.h"
+	.file 46 "/home/udvpeter/.segger/SEGGER Embedded Studio/v3/packages/libraries/STLport/stlport/string.h"
 	.byte	0x3
 	.uleb128 0x58
 	.uleb128 0x2e
@@ -46382,8 +46382,9 @@ _aTerminalId:
 	.ascii	"SPIS_SEMSTAT_SEMSTAT_Free (0UL)\000"
 .LASF462:
 	.ascii	"NRF52832_XXAA 1\000"
-.LASF1587:
-	.ascii	"BPROT_DISABLEINDEBUG_DISABLEINDEBUG_Enabled (0UL)\000"
+.LASF5820:
+	.ascii	"PPI_CHENSET_CH10_Msk (0x1UL << PPI_CHENSET_CH10_Pos"
+	.ascii	")\000"
 .LASF2784:
 	.ascii	"LPCOMP_INTENSET_DOWN_Enabled (1UL)\000"
 .LASF6934:
@@ -46628,6 +46629,8 @@ _aTerminalId:
 	.ascii	"MWU_INTENCLR_PREGION0WA_Enabled (1UL)\000"
 .LASF9676:
 	.ascii	"_STLP_TEMPLATE_NULL template<>\000"
+.LASF3903:
+	.ascii	"NFCT_INTENCLR_STARTED_Clear (1UL)\000"
 .LASF5112:
 	.ascii	"GPIO_DIRCLR_PIN9_Pos (9UL)\000"
 .LASF3548:
@@ -47306,6 +47309,9 @@ _aTerminalId:
 .LASF5563:
 	.ascii	"POWER_RAM_POWERSET_S1RETENTION_Msk (0x1UL << POWER_"
 	.ascii	"RAM_POWERSET_S1RETENTION_Pos)\000"
+.LASF11228:
+	.ascii	"/home/udvpeter/remote-patient-monitoring/nRF5_SDK_1"
+	.ascii	"5.3.0_59ac345/external/segger_rtt/SEGGER_RTT.c\000"
 .LASF7549:
 	.ascii	"SPIM_FREQUENCY_FREQUENCY_K125 (0x02000000UL)\000"
 .LASF2119:
@@ -47659,6 +47665,8 @@ _aTerminalId:
 	.ascii	"LED 1\000"
 .LASF5262:
 	.ascii	"GPIO_LATCH_PIN6_Pos (6UL)\000"
+.LASF10187:
+	.ascii	"NRFX_SAADC_CONFIG_INFO_COLOR 0\000"
 .LASF183:
 	.ascii	"__LDBL_MAX_10_EXP__ 308\000"
 .LASF9798:
@@ -47724,8 +47732,9 @@ _aTerminalId:
 	.ascii	"MDK_MINOR_VERSION 24\000"
 .LASF7863:
 	.ascii	"TIMER_CC_CC_Pos (0UL)\000"
-.LASF9702:
-	.ascii	"_STLP_NOTHROW_INHERENTLY throw()\000"
+.LASF11229:
+	.ascii	"/home/udvpeter/remote-patient-monitoring/src/ble_ex"
+	.ascii	"ample\000"
 .LASF1508:
 	.ascii	"BPROT_CONFIG1_REGION51_Enabled (1UL)\000"
 .LASF8290:
@@ -48241,9 +48250,8 @@ _aTerminalId:
 	.ascii	"MWU_REGIONEN_RGN0RA_Pos (1UL)\000"
 .LASF9173:
 	.ascii	"ER3 ER[3]\000"
-.LASF5820:
-	.ascii	"PPI_CHENSET_CH10_Msk (0x1UL << PPI_CHENSET_CH10_Pos"
-	.ascii	")\000"
+.LASF6485:
+	.ascii	"RADIO_SHORTS_ADDRESS_BCSTART_Disabled (0UL)\000"
 .LASF10767:
 	.ascii	"APP_USBD_MSC_CONFIG_INFO_COLOR 0\000"
 .LASF6784:
@@ -48875,6 +48883,8 @@ _aTerminalId:
 	.ascii	"SEGGER_RTT_CONFIG_MAX_NUM_UP_BUFFERS 2\000"
 .LASF2493:
 	.ascii	"FICR_NFC_TAGHEADER3_UD13_Pos (8UL)\000"
+.LASF1290:
+	.ascii	"AAR_INTENSET_RESOLVED_Pos (1UL)\000"
 .LASF4546:
 	.ascii	"GPIO_OUTCLR_PIN7_Pos (7UL)\000"
 .LASF7121:
@@ -53672,8 +53682,6 @@ _aTerminalId:
 	.ascii	"PPI_CHG2_CH8_Pos PPI_CHG_CH8_Pos\000"
 .LASF2670:
 	.ascii	"I2S_CONFIG_MCKFREQ_MCKFREQ_32MDIV42 (0x06000000UL)\000"
-.LASF9454:
-	.ascii	"PPI_CHG3_CH6_Excluded PPI_CHG_CH6_Excluded\000"
 .LASF7207:
 	.ascii	"SAADC_INTENCLR_CH7LIMITL_Msk (0x1UL << SAADC_INTENC"
 	.ascii	"LR_CH7LIMITL_Pos)\000"
@@ -53699,8 +53707,8 @@ _aTerminalId:
 	.ascii	"os)\000"
 .LASF2804:
 	.ascii	"LPCOMP_INTENCLR_DOWN_Enabled (1UL)\000"
-.LASF1290:
-	.ascii	"AAR_INTENSET_RESOLVED_Pos (1UL)\000"
+.LASF2516:
+	.ascii	"GPIOTE_INTENSET_IN5_Set (1UL)\000"
 .LASF2739:
 	.ascii	"I2S_PSEL_SDIN_CONNECT_Pos (31UL)\000"
 .LASF5683:
@@ -55381,9 +55389,6 @@ _aTerminalId:
 	.ascii	"MWU_INTENSET_PREGION1WA_Disabled (0UL)\000"
 .LASF5308:
 	.ascii	"GPIO_PIN_CNF_DRIVE_H0D1 (7UL)\000"
-.LASF8946:
-	.ascii	"MPU_PROTENSET1_PROTREG41_Msk BPROT_CONFIG1_REGION41"
-	.ascii	"_Msk\000"
 .LASF283:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
 .LASF9452:
@@ -56181,8 +56186,6 @@ _aTerminalId:
 	.ascii	"BLE_CSCS_BLE_OBSERVER_PRIO 2\000"
 .LASF6546:
 	.ascii	"RADIO_INTENSET_END_Pos (3UL)\000"
-.LASF7776:
-	.ascii	"TIMER_SHORTS_COMPARE3_CLEAR_Disabled (0UL)\000"
 .LASF7000:
 	.ascii	"RTC_EVTENCLR_TICK_Enabled (1UL)\000"
 .LASF6051:
@@ -56733,8 +56736,8 @@ _aTerminalId:
 	.ascii	"GPIO_DIRCLR_PIN17_Clear (1UL)\000"
 .LASF5697:
 	.ascii	"PPI_CHEN_CH4_Enabled (1UL)\000"
-.LASF10187:
-	.ascii	"NRFX_SAADC_CONFIG_INFO_COLOR 0\000"
+.LASF7969:
+	.ascii	"TWIM_SHORTS_LASTRX_STOP_Pos (12UL)\000"
 .LASF7708:
 	.ascii	"TEMP_A0_A0_Pos (0UL)\000"
 .LASF8920:
@@ -56799,9 +56802,6 @@ _aTerminalId:
 .LASF1766:
 	.ascii	"BPROT_CONFIG3_REGION115_Msk (0x1UL << BPROT_CONFIG3"
 	.ascii	"_REGION115_Pos)\000"
-.LASF3685:
-	.ascii	"MWU_PREGION_SUBS_SR17_Msk (0x1UL << MWU_PREGION_SUB"
-	.ascii	"S_SR17_Pos)\000"
 .LASF4182:
 	.ascii	"GPIO_OUT_PIN20_Pos (20UL)\000"
 .LASF8061:
@@ -58050,8 +58050,9 @@ _aTerminalId:
 .LASF3737:
 	.ascii	"MWU_PREGION_SUBS_SR4_Msk (0x1UL << MWU_PREGION_SUBS"
 	.ascii	"_SR4_Pos)\000"
-.LASF2419:
-	.ascii	"FICR_INFO_RAM_RAM_Pos (0UL)\000"
+.LASF8946:
+	.ascii	"MPU_PROTENSET1_PROTREG41_Msk BPROT_CONFIG1_REGION41"
+	.ascii	"_Msk\000"
 .LASF665:
 	.ascii	"xPSR_ISR_Msk (0x1FFUL )\000"
 .LASF6670:
@@ -58333,8 +58334,8 @@ _aTerminalId:
 	.ascii	"MWU_PERREGION_SUBSTATRA_SR26_Access (1UL)\000"
 .LASF4849:
 	.ascii	"GPIO_DIRSET_PIN30_Input (0UL)\000"
-.LASF7969:
-	.ascii	"TWIM_SHORTS_LASTRX_STOP_Pos (12UL)\000"
+.LASF892:
+	.ascii	"DWT_LSUCNT_LSUCNT_Pos 0U\000"
 .LASF1754:
 	.ascii	"BPROT_CONFIG3_REGION118_Msk (0x1UL << BPROT_CONFIG3"
 	.ascii	"_REGION118_Pos)\000"
@@ -60434,10 +60435,8 @@ _aTerminalId:
 	.ascii	"TWIS_TXD_PTR_PTR_Pos (0UL)\000"
 .LASF3791:
 	.ascii	"NFCT_INTEN_RXERROR_Enabled (1UL)\000"
-.LASF11228:
-	.ascii	"C:\\Users\\simon\\remote-patient-monitoring\\nRF5_S"
-	.ascii	"DK_15.3.0_59ac345\\external\\segger_rtt\\SEGGER_RTT"
-	.ascii	".c\000"
+.LASF7776:
+	.ascii	"TIMER_SHORTS_COMPARE3_CLEAR_Disabled (0UL)\000"
 .LASF4792:
 	.ascii	"GPIO_DIR_PIN12_Input (0UL)\000"
 .LASF1726:
@@ -60637,8 +60636,8 @@ _aTerminalId:
 	.ascii	"PWM_INTEN_PWMPERIODEND_Disabled (0UL)\000"
 .LASF5758:
 	.ascii	"PPI_CHENSET_CH23_Set (1UL)\000"
-.LASF2516:
-	.ascii	"GPIOTE_INTENSET_IN5_Set (1UL)\000"
+.LASF9454:
+	.ascii	"PPI_CHG3_CH6_Excluded PPI_CHG_CH6_Excluded\000"
 .LASF9708:
 	.ascii	"_STLP_IMPORT_TEMPLATE_KEYWORD \000"
 .LASF6217:
@@ -61327,6 +61326,8 @@ _aTerminalId:
 	.ascii	"N7_Pos)\000"
 .LASF4146:
 	.ascii	"GPIO_OUT_PIN29_Pos (29UL)\000"
+.LASF9702:
+	.ascii	"_STLP_NOTHROW_INHERENTLY throw()\000"
 .LASF2725:
 	.ascii	"I2S_PSEL_MCK_PIN_Pos (0UL)\000"
 .LASF4020:
@@ -63333,8 +63334,6 @@ _aTerminalId:
 .LASF5519:
 	.ascii	"POWER_RAMON_ONRAM1_Msk (0x1UL << POWER_RAMON_ONRAM1"
 	.ascii	"_Pos)\000"
-.LASF6485:
-	.ascii	"RADIO_SHORTS_ADDRESS_BCSTART_Disabled (0UL)\000"
 .LASF10499:
 	.ascii	"APP_USBD_STRINGS_USER X(APP_USER_1, , APP_USBD_STRI"
 	.ascii	"NG_DESC(\"User 1\"))\000"
@@ -65749,8 +65748,8 @@ _aTerminalId:
 	.ascii	"QDEC_SAMPLEPER_SAMPLEPER_256us (1UL)\000"
 .LASF8349:
 	.ascii	"UART_INTENCLR_NCTS_Enabled (1UL)\000"
-.LASF3903:
-	.ascii	"NFCT_INTENCLR_STARTED_Clear (1UL)\000"
+.LASF1587:
+	.ascii	"BPROT_DISABLEINDEBUG_DISABLEINDEBUG_Enabled (0UL)\000"
 .LASF1857:
 	.ascii	"CCM_INTENSET_ENDCRYPT_Enabled (1UL)\000"
 .LASF6507:
@@ -65901,8 +65900,8 @@ _aTerminalId:
 	.ascii	"_SR7_Pos)\000"
 .LASF7888:
 	.ascii	"TWI_INTENSET_TXDSENT_Pos (7UL)\000"
-.LASF892:
-	.ascii	"DWT_LSUCNT_LSUCNT_Pos 0U\000"
+.LASF2419:
+	.ascii	"FICR_INFO_RAM_RAM_Pos (0UL)\000"
 .LASF2318:
 	.ascii	"EGU_INTENCLR_TRIGGERED12_Pos (12UL)\000"
 .LASF7489:
@@ -67300,9 +67299,9 @@ _aTerminalId:
 	.ascii	"__ATOMIC_ACQUIRE 2\000"
 .LASF2596:
 	.ascii	"GPIOTE_CONFIG_POLARITY_Toggle (3UL)\000"
-.LASF11229:
-	.ascii	"C:\\Users\\simon\\remote-patient-monitoring\\src\\b"
-	.ascii	"le_example\000"
+.LASF3685:
+	.ascii	"MWU_PREGION_SUBS_SR17_Msk (0x1UL << MWU_PREGION_SUB"
+	.ascii	"S_SR17_Pos)\000"
 .LASF5664:
 	.ascii	"PPI_CHEN_CH12_Disabled (0UL)\000"
 .LASF4632:

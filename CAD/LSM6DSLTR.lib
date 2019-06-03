@@ -1,0 +1,38 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# LSM6DSLTR
+#
+DEF LSM6DSLTR U 0 40 Y Y 1 L N
+F0 "U" -501 421 50 H V L BNN
+F1 "LSM6DSLTR" -501 -501 50 H V L BNN
+F2 "PQFN50P300X250X86-14N" 0 0 50 H I L BNN
+F3 "Unavailable" 0 0 50 H I L BNN
+F4 "None" 0 0 50 H I L BNN
+F5 "STMicroelectronics" 0 0 50 H I L BNN
+F6 "iNEMO inertial module: 3D accelerometer and 3D gyroscope" 0 0 50 H I L BNN
+F7 "LGA-14 STMicroelectronics" 0 0 50 H I L BNN
+F8 "LSM6DSLTR" 0 0 50 H I L BNN
+DRAW
+P 2 0 0 10 -500 400 -500 -400 N
+P 2 0 0 10 -500 -400 500 -400 N
+P 2 0 0 10 500 -400 500 400 N
+P 2 0 0 10 500 400 -500 400 N
+X SDO/SA0 1 -700 0 200 R 40 40 0 0 B 
+X SDX 2 -700 -200 200 R 40 40 0 0 B 
+X SCX 3 -700 -300 200 R 40 40 0 0 B 
+X INT1 4 700 0 200 L 40 40 0 0 O 
+X VDDIO 5 700 300 200 L 40 40 0 0 W 
+X VDD 8 700 200 200 L 40 40 0 0 W 
+X CS 12 -700 300 200 R 40 40 0 0 I 
+X SCL 13 -700 200 200 R 40 40 0 0 I C
+X SDA 14 -700 100 200 R 40 40 0 0 B 
+X GND 6 700 -300 200 L 40 40 0 0 W 
+X GND 7 700 -300 200 L 40 40 0 0 W 
+X INT2 9 700 -100 200 L 40 40 0 0 O 
+ENDDRAW
+ENDDEF
+#
+# End Library

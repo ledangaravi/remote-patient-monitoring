@@ -4,4 +4,6 @@
   (lib (name SML-LX0404SIUPGUSB)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/SML-LX0404SIUPGUSB.mod)(options "")(descr ""))
   (lib (name BH1790GLC-E2)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/BH1790GLC-E2.mod)(options "")(descr ""))
   (lib (name ABS06-32.768KHZ-T)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/ABS06-32.768KHZ-T.mod)(options "")(descr ""))
+  (lib (name "Molex - 51281-0594")(type Legacy)(uri "${KIPRJMOD}/footprints.legacy/Molex - 51281-0594.mod")(options "")(descr ""))
+  (lib (name LSM6DSLTR)(type Legacy)(uri ${KIPRJMOD}/footprints.legacy/LSM6DSLTR.mod)(options "")(descr ""))
 )
