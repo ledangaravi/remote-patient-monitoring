@@ -150,6 +150,8 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  ../../nRF5_SDK/components/libraries/util/sdk_errors.h \
  ../../nRF5_SDK/components/ble/ble_services/ble_hrs/ble_hrs.h \
  ../../nRF5_SDK/components/ble/nrf_ble_gatt/nrf_ble_gatt.h \
+ ../../nRF5_SDK/components/ble/ble_services/ble_hts/ble_hts.h \
+ ../../nRF5_SDK/components/ble/common/ble_date_time.h \
  ../../nRF5_SDK/components/ble/ble_services/ble_dis/ble_dis.h \
  ../../nRF5_SDK/components/ble/common/ble_conn_params.h \
  ../../nRF5_SDK/components/ble/common/ble_srv_common.h \

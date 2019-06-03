@@ -175,6 +175,7 @@
       <file file_name="../../nRF5_SDK/components/ble/ble_services/ble_bas/ble_bas.c" />
       <file file_name="../../nRF5_SDK/components/ble/ble_services/ble_dis/ble_dis.c" />
       <file file_name="../../nRF5_SDK/components/ble/ble_services/ble_hrs/ble_hrs.c" />
+      <file file_name="../../nRF5_SDK/components/ble/ble_services/ble_hts/ble_hts.c" />
     </folder>
     <folder Name="nRF_SoftDevice">
       <file file_name="../../nRF5_SDK/components/softdevice/common/nrf_sdh.c" />

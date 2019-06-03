@@ -360,7 +360,7 @@
  
 
 #ifndef BLE_HTS_ENABLED
-#define BLE_HTS_ENABLED 0
+#define BLE_HTS_ENABLED 1
 #endif
 
 // <q> BLE_IAS_C_ENABLED  - ble_ias_c - Immediate Alert Service Client

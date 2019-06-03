@@ -100,6 +100,7 @@
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/ble_bas.o"
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/ble_dis.o"
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/ble_hrs.o"
+"Output/ble_app_hrs_pca10040_s132 Release/Obj/ble_hts.o"
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/nrf_sdh.o"
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/nrf_sdh_ble.o"
 "Output/ble_app_hrs_pca10040_s132 Release/Obj/nrf_sdh_soc.o"

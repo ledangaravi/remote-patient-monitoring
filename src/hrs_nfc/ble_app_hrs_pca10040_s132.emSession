@@ -24,6 +24,8 @@
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;Application"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;BH1792GLC"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;Board Support"/>
+  <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;imu_service"/>
+  <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;nRF_BLE_Services"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;nRF_Drivers"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;nRF_NFC"/>
  </Project>
@@ -58,7 +60,9 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="1090" useTextEdit="1" useBinaryEdit="0" left="0" path="main.cpp" selected="1" top="1056" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="46" y="657" useTextEdit="1" useBinaryEdit="0" left="0" path="main.cpp" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../imu_service/imu_service.h" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../imu_service/imu_service.cpp" selected="0" top="0" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="ble_app_hrs_pca10040_s132" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/ledangaravi/Stuff/Programming/GitHub/remote-patient-monitoring/nRF5_SDK/modules/nrfx/drivers/src" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="ble_app_hrs_pca10040_s132" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/ledangaravi/Stuff/Programming/GitHub/remote-patient-monitoring/nRF5_SDK/components/ble/ble_services/ble_hts" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

@@ -65,6 +65,7 @@
 #include "ble_advertising.h"
 #include "ble_bas.h"
 #include "ble_hrs.h"
+#include "ble_hts.h"
 #include "ble_dis.h"
 #include "ble_conn_params.h"
 #include "sensorsim.h"
@@ -161,12 +162,17 @@ extern "C" {
 
 #define DEAD_BEEF                           0xDEADBEEF                              /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
+
+#define TEMP_TYPE_AS_CHARACTERISTIC     0                                           /**< Determines if temperature type is given as characteristic (1) or as a field of measurement (0). */
+
+
 #define FPU_EXCEPTION_MASK 0x0000009F
 #define FPU_FPSCR_REG_STACK_OFF 0x40
 
 
 BLE_HRS_DEF(m_hrs);                                                 /**< Heart rate service instance. */
 BLE_BAS_DEF(m_bas);                                                 /**< Structure used to identify the battery service. */
+BLE_HTS_DEF(m_hts);                                                                 /**< Structure used to identify the health thermometer service. */
 NRF_BLE_GATT_DEF(m_gatt);                                           /**< GATT module instance. */
 NRF_BLE_QWR_DEF(m_qwr);                                             /**< Context for the Queued Write module.*/
 BLE_ADVERTISING_DEF(m_advertising);                                 /**< Advertising module instance. */
@@ -176,6 +182,7 @@ APP_TIMER_DEF(m_rr_interval_timer_id);                              /**< RR inte
 APP_TIMER_DEF(m_sensor_contact_timer_id);                           /**< Sensor contact detected timer. */
 
 static uint16_t m_conn_handle         = BLE_CONN_HANDLE_INVALID;    /**< Handle of the current connection. */
+static bool              m_hts_meas_ind_conf_pending = false;                       /**< Flag to keep track of when an indication confirmation is pending. */
 static bool     m_rr_interval_enabled = true;                       /**< Flag for enabling and disabling the registration of new RR interval measurements (the purpose of disabling this is just to test sending HRM without RR interval data. */
 
 static sensorsim_cfg_t   m_battery_sim_cfg;                         /**< Battery Level sensor simulator configuration. */
@@ -192,8 +199,111 @@ static ble_uuid_t m_adv_uuids[] =                                   /**< Univers
     {BLE_UUID_HEART_RATE_SERVICE,           BLE_UUID_TYPE_BLE},
     {BLE_UUID_BATTERY_SERVICE,              BLE_UUID_TYPE_BLE},
     {BLE_UUID_DEVICE_INFORMATION_SERVICE,   BLE_UUID_TYPE_BLE},
+    {BLE_UUID_HEALTH_THERMOMETER_SERVICE,   BLE_UUID_TYPE_BLE},
     {BLE_UUID_IMU_SERVICE_UUID,             BLE_UUID_TYPE_VENDOR_BEGIN}
 };
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+static void temperature_measurement_send(void);
+
+
+
+/**@brief Function for populating simulated health thermometer measurement.
+ */
+static void hts_sim_measurement(ble_hts_meas_t * p_meas)
+{
+    static ble_date_time_t time_stamp = { 2012, 12, 5, 11, 50, 0 };
+
+    uint32_t celciusX100;
+
+    p_meas->temp_in_fahr_units = false;
+    p_meas->time_stamp_present = true;
+    p_meas->temp_type_present  = (TEMP_TYPE_AS_CHARACTERISTIC ? false : true);
+
+    celciusX100 = 3567;//sensorsim_measure(&m_temp_celcius_sim_state, &m_temp_celcius_sim_cfg);
+
+    p_meas->temp_in_celcius.exponent = -2;
+    p_meas->temp_in_celcius.mantissa = celciusX100;
+    p_meas->temp_in_fahr.exponent    = -2;
+    p_meas->temp_in_fahr.mantissa    = (32 * 100) + ((celciusX100 * 9) / 5);
+    p_meas->time_stamp               = time_stamp;
+    p_meas->temp_type                = BLE_HTS_TEMP_TYPE_FINGER;
+
+    // update simulated time stamp
+    time_stamp.seconds += 27;
+    if (time_stamp.seconds > 59)
+    {
+        time_stamp.seconds -= 60;
+        time_stamp.minutes++;
+        if (time_stamp.minutes > 59)
+        {
+            time_stamp.minutes = 0;
+        }
+    }
+}
+
+/**@brief Function for simulating and sending one Temperature Measurement.
+ */
+static void temperature_measurement_send(void)
+{
+    ble_hts_meas_t simulated_meas;
+    ret_code_t     err_code;
+
+    if (!m_hts_meas_ind_conf_pending)
+    {
+        hts_sim_measurement(&simulated_meas);
+
+        err_code = ble_hts_measurement_send(&m_hts, &simulated_meas);
+
+        switch (err_code)
+        {
+            case NRF_SUCCESS:
+                // Measurement was successfully sent, wait for confirmation.
+                m_hts_meas_ind_conf_pending = true;
+                break;
+
+            case NRF_ERROR_INVALID_STATE:
+                // Ignore error.
+                break;
+
+            default:
+                APP_ERROR_HANDLER(err_code);
+                break;
+        }
+    }
+}
+
+
+/**@brief Function for handling the Health Thermometer Service events.
+ *
+ * @details This function will be called for all Health Thermometer Service events which are passed
+ *          to the application.
+ *
+ * @param[in] p_hts  Health Thermometer Service structure.
+ * @param[in] p_evt  Event received from the Health Thermometer Service.
+ */
+static void on_hts_evt(ble_hts_t * p_hts, ble_hts_evt_t * p_evt)
+{
+    switch (p_evt->evt_type)
+    {
+        case BLE_HTS_EVT_INDICATION_ENABLED:
+            // Indication has been enabled, send a single temperature measurement
+            temperature_measurement_send();
+            break;
+
+        case BLE_HTS_EVT_INDICATION_CONFIRMED:
+            m_hts_meas_ind_conf_pending = false;
+            break;
+
+        default:
+            // No implementation needed.
+            break;
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /**@brief Callback function for asserts in the SoftDevice.
@@ -508,6 +618,7 @@ static void services_init(void)
 {
     ret_code_t         err_code;
     ble_hrs_init_t     hrs_init;
+    ble_hts_init_t     hts_init;
     ble_bas_init_t     bas_init;
     ble_dis_init_t     dis_init;
     nrf_ble_qwr_init_t qwr_init = {0};
@@ -533,6 +644,21 @@ static void services_init(void)
     hrs_init.bsl_rd_sec      = SEC_OPEN;
 
     err_code = ble_hrs_init(&m_hrs, &hrs_init);
+    APP_ERROR_CHECK(err_code);
+
+    
+    // Initialize Health Thermometer Service
+    memset(&hts_init, 0, sizeof(hts_init));
+
+    hts_init.evt_handler                 = on_hts_evt;
+    hts_init.temp_type_as_characteristic = TEMP_TYPE_AS_CHARACTERISTIC;
+    hts_init.temp_type                   = BLE_HTS_TEMP_TYPE_BODY;
+
+    // Here the sec level for the Health Thermometer Service can be changed/increased.
+    hts_init.ht_meas_cccd_wr_sec = SEC_OPEN;//SEC_JUST_WORKS;
+    hts_init.ht_type_rd_sec      = SEC_OPEN;
+
+    err_code = ble_hts_init(&m_hts, &hts_init);
     APP_ERROR_CHECK(err_code);
 
     // Initialize Battery Service.
