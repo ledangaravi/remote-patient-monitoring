@@ -447,6 +447,9 @@ static void heart_rate_meas_timeout_handler(void * p_context)
     // NOTE: An application will normally not do this. It is done here just for testing generation
     // of messages without RR Interval measurements.
     m_rr_interval_enabled = ((cnt % 3) != 0);
+
+    p24_steps_characteristic_update(&m_p24_service, &cnt);
+    p24_ox_characteristic_update(&m_p24_service, &cnt);
 }
 
 
