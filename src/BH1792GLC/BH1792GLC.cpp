@@ -295,8 +295,7 @@ int32_t BH1792GLC::get_fifo_data()
             break;
         }
 
-        m_dat.fifo[i].off = ((uint16_t)reg[1] << 8) | (uint16_t)reg[0];
-        m_dat.fifo[i].on  = ((uint16_t)reg[3] << 8) | (uint16_t)reg[2];
+        m_dat.fifo[i] = ((uint16_t)reg[3] << 8) | (uint16_t)reg[2] - ((uint16_t)reg[1] << 8) | (uint16_t)reg[0];
 
         
         /*if(ma_prm->num == ma_prm->len) {

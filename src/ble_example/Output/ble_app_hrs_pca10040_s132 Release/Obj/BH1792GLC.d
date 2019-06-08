@@ -1,29 +1,29 @@
 Output/ble_app_hrs_pca10040_s132\ Release/Obj/BH1792GLC.o: \
- C:\Users\simon\remote-patient-monitoring\src\BH1792GLC\BH1792GLC.cpp \
- C:\Users\simon\remote-patient-monitoring\src\BH1792GLC\BH1792GLC.h \
- C:\Users\simon\remote-patient-monitoring\src\BH1792GLC\BH1792GLC_registers.h \
+ /home/udvpeter/remote-patient-monitoring/src/BH1792GLC/BH1792GLC.cpp \
+ /home/udvpeter/remote-patient-monitoring/src/BH1792GLC/BH1792GLC.h \
+ /home/udvpeter/remote-patient-monitoring/src/BH1792GLC/BH1792GLC_registers.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/delay/nrf_delay.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/nrfx.h \
  ../../nRF5_SDK_15.3.0_59ac345/integration/nrfx/nrfx_config.h \
  ../config/sdk_config.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/nrfx_common.h \
- C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdint.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stddef.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/user_config.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/compat.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/host.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_system.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stddef.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\__crossworks.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
- C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.16/include/stdbool.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stddef.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cprolog.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/features.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stlport_version.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/user_config.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/compat.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/host.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_system.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_crossworks.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/stl_confix.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/config/_native_headers.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_epilog.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_config_compat_post.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/mdk/nrf.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/mdk/nrf52.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/toolchain/cmsis/include/core_cm4.h \
@@ -57,8 +57,8 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/BH1792GLC.o: \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_nvic.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/nrf_assert.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_error.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdio.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stdio.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdio.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_errors.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_error.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_error_weak.h \
@@ -70,61 +70,61 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/BH1792GLC.o: \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/nrfx_errors.h \
  ../../nRF5_SDK_15.3.0_59ac345/integration/nrfx/legacy/nrf_drv_timer.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/include/nrfx_timer.h \
- ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_timer.h ../I2C/I2C.h \
+ ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_timer.h ../I2C/i2c.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/include/nrfx_twim.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_twim.h \
  ../../nRF5_SDK_15.3.0_59ac345/integration/nrfx/legacy/nrf_drv_gpiote.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/include/nrfx_gpiote.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_gpiote.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_gpio.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/vector \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_prolog.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/debug/_debug.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_algobase.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstddef.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstddef \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstring.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstring \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\string.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/using/cstring \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/climits \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\climits \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/limits.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\limits.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstdlib.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstdlib \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdlib.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\stdlib.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cmath.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cmath \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/math.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\math.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_pair.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/type_traits.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/type_manips.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_move_construct_fwk.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_iterator_base.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_ptrs_specialize.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_algobase.c \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_function_base.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_iterator.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_alloc.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_new.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\new \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/cstdlib \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/exception \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\exception \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstdio.h \
- c:\program\ files\segger\segger\ embedded\ studio\ for\ arm\ 4.16\include\cstdio \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_construct.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_alloc.c \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_uninitialized.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.c \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_range_errors.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_range_errors.c \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_bvector.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_relops_cont.h \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/iterator \
- C:/Users/simon/AppData/Local/SEGGER/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stream_iterator.h
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/vector \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_prolog.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/debug/_debug.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_algobase.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstddef.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/cstddef \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstring.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/cstring \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/string.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/using/cstring \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/climits \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/climits \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/limits.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/limits.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstdlib.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/cstdlib \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stdlib.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/stdlib.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cmath.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/cmath \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/math.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/math.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_pair.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/type_traits.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/type_manips.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_move_construct_fwk.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_iterator_base.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_ptrs_specialize.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_algobase.c \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_function_base.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_iterator.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_alloc.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_new.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/new \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/cstdlib \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/exception \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/exception \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_cstdio.h \
+ /usr/share/segger_embedded_studio_for_arm_4.16/include/cstdio \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_construct.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_alloc.c \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_uninitialized.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_vector.c \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_range_errors.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_range_errors.c \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_bvector.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_relops_cont.h \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/iterator \
+ /home/udvpeter/.segger/SEGGER\ Embedded\ Studio/v3/packages/libraries/STLport/stlport/stl/_stream_iterator.h

@@ -25,7 +25,7 @@ typedef struct {
 typedef struct {
     u16_pair_t     ir;
     u16_pair_t     green;
-    u16_pair_t     fifo[35];
+    uint16_t     fifo[35];
     u16_pair_t     fifo_lpf[35];
     uint8_t        fifo_lev;
 } bh1792_data_t;

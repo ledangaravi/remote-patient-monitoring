@@ -3837,7 +3837,7 @@
 // <3=> 32 bit 
 
 #ifndef NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH
-#define NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
+#define NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH 3
 #endif
 
 // <o> NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -3858,7 +3858,7 @@
 // <e> NRFX_TIMER_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
 #ifndef NRFX_TIMER_CONFIG_LOG_ENABLED
-#define NRFX_TIMER_CONFIG_LOG_ENABLED 0
+#define NRFX_TIMER_CONFIG_LOG_ENABLED 1
 #endif
 // <o> NRFX_TIMER_CONFIG_LOG_LEVEL  - Default Severity level
  
@@ -3869,7 +3869,7 @@
 // <4=> Debug 
 
 #ifndef NRFX_TIMER_CONFIG_LOG_LEVEL
-#define NRFX_TIMER_CONFIG_LOG_LEVEL 3
+#define NRFX_TIMER_CONFIG_LOG_LEVEL 4
 #endif
 
 // <o> NRFX_TIMER_CONFIG_INFO_COLOR  - ANSI escape code prefix.
@@ -3917,7 +3917,7 @@
  
 
 #ifndef NRFX_TWIM0_ENABLED
-#define NRFX_TWIM0_ENABLED 0
+#define NRFX_TWIM0_ENABLED 1
 #endif
 
 // <q> NRFX_TWIM1_ENABLED  - Enable TWIM1 instance
@@ -3962,7 +3962,7 @@
 // <e> NRFX_TWIM_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
 #ifndef NRFX_TWIM_CONFIG_LOG_ENABLED
-#define NRFX_TWIM_CONFIG_LOG_ENABLED 0
+#define NRFX_TWIM_CONFIG_LOG_ENABLED 1
 #endif
 // <o> NRFX_TWIM_CONFIG_LOG_LEVEL  - Default Severity level
  
@@ -3973,7 +3973,7 @@
 // <4=> Debug 
 
 #ifndef NRFX_TWIM_CONFIG_LOG_LEVEL
-#define NRFX_TWIM_CONFIG_LOG_LEVEL 3
+#define NRFX_TWIM_CONFIG_LOG_LEVEL 4
 #endif
 
 // <o> NRFX_TWIM_CONFIG_INFO_COLOR  - ANSI escape code prefix.

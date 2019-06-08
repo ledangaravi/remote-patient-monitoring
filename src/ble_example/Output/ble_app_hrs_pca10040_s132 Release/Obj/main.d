@@ -113,55 +113,30 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_error.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/nordic_common.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_error_weak.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_err.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_gap.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_hci.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_ranges.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_types.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_l2cap.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_gatt.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_gattc.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_gatts.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_err.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_hci.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/common/ble_srv_common.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_types.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/common/nrf_sdh.h \
+ ../config/sdk_config.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_errors.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/libraries/experimental_section_vars/nrf_section_iter.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/libraries/experimental_section_vars/nrf_section.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/nrf_assert.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_util.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/mdk/compiler_abstraction.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf52/nrf_mbr.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_svc.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_gap.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_gatt.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/common/ble_advdata.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/common/nrf_sdh_soc.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_common.h \
- ../config/sdk_config.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_os.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/app_util.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_macros.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/nrf_assert.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/ble_advertising/ble_advertising.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/ble_gattc.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/ble_services/ble_bas/ble_bas.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/common/nrf_sdh_ble.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/experimental_section_vars/nrf_section_iter.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/experimental_section_vars/nrf_section.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/nrf_assert.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_errors.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/ble_services/ble_hrs/ble_hrs.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/nrf_ble_gatt/nrf_ble_gatt.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/ble_services/ble_dis/ble_dis.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/common/ble_conn_params.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/common/ble_srv_common.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/sensorsim/sensorsim.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/common/nrf_sdh.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/common/nrf_sdh_soc.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_soc.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/timer/app_timer.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/bsp/bsp_btn_ble.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/bsp/bsp.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/boards/boards.h \
- ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_gpio.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/libraries/atomic_fifo/nrf_atfifo.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_instance.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/libraries/experimental_section_vars/nrf_section.h \
+ ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_types.h \
+ ../../nRF5_SDK_15.3.0_59ac345/integration/nrfx/legacy/nrf_drv_gpiote.h \
+ ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/include/nrfx_gpiote.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/nrfx.h \
  ../../nRF5_SDK_15.3.0_59ac345/integration/nrfx/nrfx_config.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/nrfx_common.h \
@@ -179,26 +154,6 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/util/sdk_resources.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/softdevice/s132/headers/nrf_sd_def.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/nrfx_errors.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/boards/pca10040.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/button/app_button.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/peer_manager/peer_manager.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/peer_manager/peer_manager_types.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/common/ble_gatt_db.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/peer_manager/peer_database.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/peer_manager/peer_manager_internal.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/peer_manager/peer_manager_handler.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/peer_manager/peer_manager.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/fds/fds.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/peer_manager/nrf_ble_lesc.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/nrf_ble_qwr/nrf_ble_qwr.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/ble/common/ble_conn_state.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/atomic/nrf_atomic.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/atomic_fifo/nrf_atfifo.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_instance.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/experimental_section_vars/nrf_section.h \
- ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log_types.h \
- ../../nRF5_SDK_15.3.0_59ac345/integration/nrfx/legacy/nrf_drv_gpiote.h \
- ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/include/nrfx_gpiote.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_gpiote.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_gpio.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/include/nrfx_twim.h \
@@ -208,7 +163,8 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/include/nrfx_timer.h \
  ../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/hal/nrf_timer.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
- ../I2C/i2c.h ../LSM6DSL/lsm6dsl_reg.h \
+ ../BH1792GLC/BH1792GLC.h ../BH1792GLC/BH1792GLC_registers.h ../I2C/i2c.h \
+ ../BH1792GLC/BH1792GLC_registers.h ../LSM6DS3/lsm6ds3_reg.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/nrf_log.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/strerror/nrf_strerror.h \
  ../../nRF5_SDK_15.3.0_59ac345/components/libraries/log/src/nrf_log_internal.h \

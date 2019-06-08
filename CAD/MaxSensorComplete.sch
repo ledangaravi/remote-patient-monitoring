@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:HealthMonitor-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -594,7 +594,7 @@ Wire Wire Line
 Wire Wire Line
 	5350 1800 5550 1800
 $Comp
-L Logic_LevelTranslator:TXB0104RUT U7
+L HealthMonitor-rescue:TXB0104RUT-Logic_LevelTranslator U7
 U 1 1 5CE63338
 P 2900 2450
 F 0 "U7" H 2900 1664 50  0000 C CNN
