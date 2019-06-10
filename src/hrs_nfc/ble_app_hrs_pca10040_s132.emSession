@@ -25,6 +25,9 @@
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;BH1792GLC"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;Board Support"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;imu_service"/>
+  <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;nRF_BLE"/>
+  <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;nRF_NFC"/>
+  <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;nRF_SoftDevice"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;p24_service"/>
  </Project>
  <Register1>
@@ -58,9 +61,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="446" useTextEdit="1" useBinaryEdit="0" left="0" path="main.cpp" selected="1" top="1183" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="21" useTextEdit="1" useBinaryEdit="0" left="0" path="../p24_service/p24_service.h" selected="0" top="13" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="213" useTextEdit="1" useBinaryEdit="0" left="0" path="../p24_service/p24_service.cpp" selected="0" top="184" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="1163" useTextEdit="1" useBinaryEdit="0" left="0" path="main.cpp" selected="1" top="1131" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="ble_app_hrs_pca10040_s132" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/ledangaravi/Stuff/Programming/GitHub/remote-patient-monitoring/src/p24_service" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="ble_app_hrs_pca10040_s132" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="C:/build/HP-NFCL74-JOB1/private/nfc_t2t_lib/nfc_t2t_lib.c&#xa;&#xa;C:/build/HP-NFCL74-JOB1/private/nfc_t2t_lib/nfc_t2t_lib_al.c&#xa;" fileDialogInitialDirectory="C:/Users/ledangaravi/Stuff/Programming/GitHub/remote-patient-monitoring/nRF5_SDK/components/nfc/ndef/uri" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

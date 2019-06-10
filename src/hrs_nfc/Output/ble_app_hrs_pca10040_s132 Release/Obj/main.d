@@ -215,6 +215,8 @@ Output/ble_app_hrs_pca10040_s132\ Release/Obj/main.o: \
  ../../nRF5_SDK/components/nfc/ndef/launchapp/nfc_launchapp_msg.h \
  ../../nRF5_SDK/components/nfc/ndef/generic/message/nfc_ndef_msg.h \
  ../../nRF5_SDK/components/nfc/ndef/text/nfc_text_rec.h \
+ ../../nRF5_SDK/components/nfc/ndef/uri/nfc_uri_msg.h \
+ ../../nRF5_SDK/components/nfc/ndef/uri/nfc_uri_rec.h \
  ../../nRF5_SDK/components/libraries/hardfault/hardfault.h \
  ../../nRF5_SDK/components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
  ../BH1792GLC/BH1792GLC.h ../BH1792GLC/BH1792GLC_registers.h ../I2C/i2c.h \

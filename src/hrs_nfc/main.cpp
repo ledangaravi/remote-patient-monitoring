@@ -97,6 +97,7 @@
 #include "nfc_launchapp_msg.h"
 #include "nfc_ndef_msg.h"
 #include "nfc_text_rec.h"
+#include "nfc_uri_msg.h"
 #include "nrf_error.h"
 #include "app_error.h"
 #include "hardfault.h"
@@ -1142,7 +1143,7 @@ static const uint8_t m_android_package_name[] = {'c', 'o', 'm', '.', 'f', 'r', '
                                                  '.', 'P','a', 't', 'i', 'e', 'n', 't', '2', '4', 'A', 'p', 'p'};
 
 static const uint8_t m_url[] =
-    {'n', 'o', 'r', 'd', 'i', 'c', 's', 'e', 'm', 'i', '.', 'c', 'o', 'm'}; //URL "nordicsemi.com"
+    {'p','a','t','i','e','n','t','2','4','.','x','y','z','/','h','o','m','e'};
 
 
 uint8_t m_ndef_msg_buf[256];
@@ -1160,7 +1161,7 @@ static void nfc_callback(void * p_context, nfc_t2t_event_t event, const uint8_t 
     {
         case NFC_T2T_EVENT_FIELD_ON:
             bsp_board_led_on(BSP_BOARD_LED_0);
-            //advertising_start(false);
+            // advertising_start(false);
             break;
 
         case NFC_T2T_EVENT_FIELD_OFF:
@@ -1213,8 +1214,8 @@ int main(void)
     len = sizeof(m_ndef_msg_buf);
 
 
-    /* Create NFC NDEF message description, capacity - 2 records */
-    NFC_NDEF_MSG_DEF(nfc_launchapp_msg, 2);
+    /* Create NFC NDEF message description, capacity - 3 records */
+    NFC_NDEF_MSG_DEF(nfc_custom_msg, 3);
 
     /* Create NFC NDEF Android Application Record description */
     NFC_NDEF_ANDROID_LAUNCHAPP_RECORD_DESC_DEF(nfc_and_launchapp_rec,
@@ -1222,7 +1223,7 @@ int main(void)
                                                sizeof(m_android_package_name));
 
     /* Add Android Application Record as first record to message */
-    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_launchapp_msg),
+    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_custom_msg),
                                        &NFC_NDEF_ANDROID_LAUNCHAPP_RECORD_DESC(nfc_and_launchapp_rec));
     VERIFY_SUCCESS(err_code);
 
@@ -1235,13 +1236,20 @@ int main(void)
                                   sizeof(en_payload));
 
     /* Add text records to NDEF text message */
-    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_launchapp_msg),
+    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_custom_msg),
                                        &NFC_NDEF_TEXT_RECORD_DESC(nfc_en_text_rec));
+    VERIFY_SUCCESS(err_code);
+
+
+    NFC_NDEF_URI_RECORD_DESC_DEF(nfc_uri_rec, NFC_URI_HTTP_WWW, m_url, sizeof(m_url));
+
+    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_custom_msg),
+                                       &NFC_NDEF_URI_RECORD_DESC(nfc_uri_rec));
     VERIFY_SUCCESS(err_code);
     
 
     /* Encode whole message into buffer */
-    err_code = nfc_ndef_msg_encode(&NFC_NDEF_MSG(nfc_launchapp_msg),
+    err_code = nfc_ndef_msg_encode(&NFC_NDEF_MSG(nfc_custom_msg),
                                    m_ndef_msg_buf,
                                    &len);
 
