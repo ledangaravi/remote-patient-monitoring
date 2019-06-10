@@ -10762,21 +10762,21 @@
  
 
 #ifndef NFC_NDEF_TEXT_RECORD_ENABLED
-#define NFC_NDEF_TEXT_RECORD_ENABLED 0
+#define NFC_NDEF_TEXT_RECORD_ENABLED 1
 #endif
 
 // <q> NFC_NDEF_URI_MSG_ENABLED  - nfc_uri_msg - Encoding data for NDEF message with URI record for NFC Tag
  
 
 #ifndef NFC_NDEF_URI_MSG_ENABLED
-#define NFC_NDEF_URI_MSG_ENABLED 0
+#define NFC_NDEF_URI_MSG_ENABLED 1
 #endif
 
 // <q> NFC_NDEF_URI_REC_ENABLED  - nfc_uri_rec - Encoding data for a URI record for NFC Tag
  
 
 #ifndef NFC_NDEF_URI_REC_ENABLED
-#define NFC_NDEF_URI_REC_ENABLED 0
+#define NFC_NDEF_URI_REC_ENABLED 1
 #endif
 
 // <e> NFC_T2T_PARSER_ENABLED - nfc_type_2_tag_parser - Parser for decoding Type 2 Tag data

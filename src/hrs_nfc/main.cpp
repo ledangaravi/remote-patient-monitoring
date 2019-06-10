@@ -93,7 +93,10 @@
 
 
 #include "nfc_t2t_lib.h"
+#include "nfc_launchapp_rec.h"
 #include "nfc_launchapp_msg.h"
+#include "nfc_ndef_msg.h"
+#include "nfc_text_rec.h"
 #include "nrf_error.h"
 #include "app_error.h"
 #include "hardfault.h"
@@ -168,6 +171,9 @@ extern "C" {
 
 #define FPU_EXCEPTION_MASK 0x0000009F
 #define FPU_FPSCR_REG_STACK_OFF 0x40
+
+
+//bool erase_bonds;
 
 
 BLE_HRS_DEF(m_hrs);                                                 /**< Heart rate service instance. */
@@ -1121,18 +1127,23 @@ static void idle_state_handle(void)
 
 /**************************************************************************************************/
 
-/** @snippet [NFC Launch App usage_0] */
-/* nRF Toolbox Android application package name */
-static const uint8_t m_android_package_name[] = {'n', 'o', '.', 'n', 'o', 'r', 'd', 'i', 'c', 's',
-                                                 'e', 'm', 'i', '.', 'a', 'n', 'd', 'r', 'o', 'i',
-                                                 'd', '.', 'n', 'r', 'f', 't', 'o', 'o', 'l', 'b',
-                                                 'o', 'x'};
+/* Text message in English with its language code. */
+/** @snippet [NFC text usage_1] */
+static const uint8_t en_payload[] =
+{
+    'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!'
+};
+static const uint8_t en_code[] = {'e', 'n'};
+/** @snippet [NFC text usage_1] */
 
-/* nRF Toolbox application ID for Windows phone */
-static const uint8_t m_windows_application_id[] = {'{', 'e', '1', '2', 'd', '2', 'd', 'a', '7', '-',
-                                                   '4', '8', '8', '5', '-', '4', '0', '0', 'f', '-',
-                                                   'b', 'c', 'd', '4', '-', '6', 'c', 'b', 'd', '5',
-                                                   'b', '8', 'c', 'f', '6', '2', 'c', '}'};
+
+static const uint8_t m_android_package_name[] = {'c', 'o', 'm', '.', 'f', 'r', 'i', 'e', 'l', 'i', 'n', 'g',
+                                                 '.','a', 'n', 'd', 'r', 'o', 'i', 'd',
+                                                 '.', 'P','a', 't', 'i', 'e', 'n', 't', '2', '4', 'A', 'p', 'p'};
+
+static const uint8_t m_url[] =
+    {'n', 'o', 'r', 'd', 'i', 'c', 's', 'e', 'm', 'i', '.', 'c', 'o', 'm'}; //URL "nordicsemi.com"
+
 
 uint8_t m_ndef_msg_buf[256];
 /** @snippet [NFC Launch App usage_0] */
@@ -1149,6 +1160,7 @@ static void nfc_callback(void * p_context, nfc_t2t_event_t event, const uint8_t 
     {
         case NFC_T2T_EVENT_FIELD_ON:
             bsp_board_led_on(BSP_BOARD_LED_0);
+            //advertising_start(false);
             break;
 
         case NFC_T2T_EVENT_FIELD_OFF:
@@ -1200,13 +1212,38 @@ int main(void)
     /*  Provide information about available buffer size to encoding function. */
     len = sizeof(m_ndef_msg_buf);
 
-    /* Encode launchapp message into buffer */
-    err_code = nfc_launchapp_msg_encode(m_android_package_name,
-                                        sizeof(m_android_package_name),
-                                        m_windows_application_id,
-                                        sizeof(m_windows_application_id),
-                                        m_ndef_msg_buf,
-                                        &len);
+
+    /* Create NFC NDEF message description, capacity - 2 records */
+    NFC_NDEF_MSG_DEF(nfc_launchapp_msg, 2);
+
+    /* Create NFC NDEF Android Application Record description */
+    NFC_NDEF_ANDROID_LAUNCHAPP_RECORD_DESC_DEF(nfc_and_launchapp_rec,
+                                               m_android_package_name,
+                                               sizeof(m_android_package_name));
+
+    /* Add Android Application Record as first record to message */
+    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_launchapp_msg),
+                                       &NFC_NDEF_ANDROID_LAUNCHAPP_RECORD_DESC(nfc_and_launchapp_rec));
+    VERIFY_SUCCESS(err_code);
+
+    /* Create NFC NDEF text record description in English */
+    NFC_NDEF_TEXT_RECORD_DESC_DEF(nfc_en_text_rec,
+                                  UTF_8,
+                                  en_code,
+                                  sizeof(en_code),
+                                  en_payload,
+                                  sizeof(en_payload));
+
+    /* Add text records to NDEF text message */
+    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_launchapp_msg),
+                                       &NFC_NDEF_TEXT_RECORD_DESC(nfc_en_text_rec));
+    VERIFY_SUCCESS(err_code);
+    
+
+    /* Encode whole message into buffer */
+    err_code = nfc_ndef_msg_encode(&NFC_NDEF_MSG(nfc_launchapp_msg),
+                                   m_ndef_msg_buf,
+                                   &len);
 
     APP_ERROR_CHECK(err_code);
     /** @snippet [NFC Launch App usage_2] */

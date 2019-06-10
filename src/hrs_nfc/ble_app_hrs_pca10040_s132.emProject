@@ -228,6 +228,7 @@
       <file file_name="../../nRF5_SDK/components/nfc/ndef/generic/record/nfc_ndef_record.c" />
       <file file_name="../../nRF5_SDK/components/nfc/platform/nfc_platform.c" />
       <file file_name="../../nRF5_SDK/components/nfc/t2t_lib/nfc_t2t_lib_gcc.a" />
+      <file file_name="../../nRF5_SDK/components/nfc/ndef/text/nfc_text_rec.c" />
     </folder>
     <folder Name="p24_service">
       <file file_name="../p24_service/p24_service.cpp" />
