@@ -122,7 +122,7 @@ extern "C" {
 #define MANUFACTURER_NAME                   "patient24"                   /**< Manufacturer. Will be passed to Device Information Service. */
 #define APP_ADV_INTERVAL                    300                                     /**< The advertising interval (in units of 0.625 ms. This value corresponds to 187.5 ms). */
 
-#define APP_ADV_DURATION                    18000                                   /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
+#define APP_ADV_DURATION                    1000                                   /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
 
 #define APP_BLE_CONN_CFG_TAG                1                                       /**< A tag identifying the SoftDevice BLE configuration. */
 #define APP_BLE_OBSERVER_PRIO               3                                       /**< Application's BLE observer priority. You shouldn't need to modify this value. */
@@ -1132,7 +1132,7 @@ static void idle_state_handle(void)
 /** @snippet [NFC text usage_1] */
 static const uint8_t en_payload[] =
 {
-    'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!'
+    'P','2','4'
 };
 static const uint8_t en_code[] = {'e', 'n'};
 /** @snippet [NFC text usage_1] */
@@ -1162,6 +1162,20 @@ static void nfc_callback(void * p_context, nfc_t2t_event_t event, const uint8_t 
         case NFC_T2T_EVENT_FIELD_ON:
             bsp_board_led_on(BSP_BOARD_LED_0);
             // advertising_start(false);
+
+            ret_code_t err_code;
+
+            if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
+            {
+                err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+                APP_ERROR_CHECK(err_code);
+            }
+
+//            err_code = ble_advertising_start(&m_advertising, BLE_ADV_MODE_FAST);
+//            if (err_code != NRF_ERROR_INVALID_STATE)
+//            {
+//                APP_ERROR_CHECK(err_code);
+//            }
             break;
 
         case NFC_T2T_EVENT_FIELD_OFF:
