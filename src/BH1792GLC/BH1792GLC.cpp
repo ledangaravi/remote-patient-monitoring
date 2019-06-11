@@ -1,16 +1,12 @@
 #include "BH1792GLC.h"
 
-#include <vector>
-#include <iterator>
-
-
 #include "nrf_drv_gpiote.h"
 #include "nrfx_gpiote.h"
 
 
-BH1792GLC::BH1792GLC(I2C * _i2c) : m_i2c(_i2c) {}
+BH1792GLC::BH1792GLC(I2C * _i2c) : m_i2c(_i2c) {_init_interrupt = true;}
 
-BH1792GLC::BH1792GLC(){}
+BH1792GLC::BH1792GLC(){_init_interrupt = true;}
 
 
 
@@ -82,7 +78,7 @@ int32_t BH1792GLC::configure(void)
         this->i2c_err = ret_i2c;
     }
 
-    if(this->interrupt_handler != NULL  && this->p_int != -1)
+    if(this->interrupt_handler != NULL  && this->p_int != -1 && _init_interrupt)
     {
       uint32_t err_code;
       nrfx_gpiote_in_config_t in_config_hitolo = NRFX_GPIOTE_CONFIG_IN_SENSE_HITOLO(false);
@@ -91,6 +87,8 @@ int32_t BH1792GLC::configure(void)
       APP_ERROR_CHECK(err_code);
 
       nrfx_gpiote_in_event_enable(this->p_int, true);
+
+      _init_interrupt = false;
     }
 
     return ret;
@@ -295,7 +293,7 @@ int32_t BH1792GLC::get_fifo_data()
             break;
         }
 
-        m_dat.fifo[i] = ((uint16_t)reg[3] << 8) | (uint16_t)reg[2] - ((uint16_t)reg[1] << 8) | (uint16_t)reg[0];
+        m_dat.fifo[i] = (((uint16_t)reg[3] << 8) | (uint16_t)reg[2] - ((uint16_t)reg[1] << 8) | (uint16_t)reg[0]);
 
         
         /*if(ma_prm->num == ma_prm->len) {

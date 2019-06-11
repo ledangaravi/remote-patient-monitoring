@@ -6,8 +6,6 @@
 #include "nrfx_gpiote.h"
 #include "nrfx_twim.h"
 
-#include <vector>
-
 class I2C
 {
 

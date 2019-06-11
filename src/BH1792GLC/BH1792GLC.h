@@ -8,6 +8,8 @@
 
 #include "i2c.h"
 
+#include "arm_math.h"
+
 #include <stdint.h>
 
 typedef struct {
@@ -25,7 +27,7 @@ typedef struct {
 typedef struct {
     u16_pair_t     ir;
     u16_pair_t     green;
-    uint16_t     fifo[35];
+    float32_t      fifo[35];
     u16_pair_t     fifo_lpf[35];
     uint8_t        fifo_lev;
 } bh1792_data_t;
@@ -84,6 +86,7 @@ class BH1792GLC
     private:
 
         void in_pin_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action);
+        bool _init_interrupt;
 
         int32_t _i2c_write(uint8_t slv_adr, uint8_t reg_adr, uint8_t *reg, uint8_t reg_size);
         int32_t _i2c_read(uint8_t slv_adr, uint8_t reg_adr, uint8_t *reg, uint8_t reg_size);

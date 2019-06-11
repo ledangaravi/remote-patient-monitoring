@@ -815,7 +815,7 @@ int32_t lsm6dsl_temp_flag_data_ready_get(lsm6dsl_ctx_t *ctx, uint8_t *val)
 }
 
 /**
-  * @brief  Accelerometer axis user offset correction expressed in two’s
+  * @brief  Accelerometer axis user offset correction expressed in twoâ€™s
   *         complement, weight depends on USR_OFF_W in CTRL6_C.
   *         The value must be in the range [-127 127].[set]
   *
@@ -832,7 +832,7 @@ int32_t lsm6dsl_xl_usr_offset_set(lsm6dsl_ctx_t *ctx, uint8_t *buff)
 }
 
 /**
-  * @brief  Accelerometer axis user offset correction xpressed in two’s
+  * @brief  Accelerometer axis user offset correction xpressed in twoâ€™s
   *         complement, weight depends on USR_OFF_W in CTRL6_C.
   *         The value must be in the range [-127 127].[get]
   *
@@ -1051,7 +1051,7 @@ int32_t lsm6dsl_rounding_mode_get(lsm6dsl_ctx_t *ctx, lsm6dsl_rounding_t *val)
 
 /**
   * @brief  Temperature data output register (r). L and H registers together
-  *         express a 16-bit word in two’s complement.[get]
+  *         express a 16-bit word in twoâ€™s complement.[get]
   *
   * @param  ctx    Read / write interface definitions
   * @param  buff   Buffer that stores data read
@@ -1067,7 +1067,7 @@ int32_t lsm6dsl_temperature_raw_get(lsm6dsl_ctx_t *ctx, uint8_t *buff)
 
 /**
   * @brief  Angular rate sensor. The value is expressed as a 16-bit word in
-  *         two’s complement.[get]
+  *         twoâ€™s complement.[get]
   *
   * @param  ctx    Read / write interface definitions
   * @param  buff   Buffer that stores data read
@@ -1083,7 +1083,7 @@ int32_t lsm6dsl_angular_rate_raw_get(lsm6dsl_ctx_t *ctx, uint8_t *buff)
 
 /**
   * @brief  Linear acceleration output register. The value is expressed
-  *         as a 16-bit word in two’s complement.[get]
+  *         as a 16-bit word in twoâ€™s complement.[get]
   *
   * @param  ctx    Read / write interface definitions
   * @param  buff   Buffer that stores data read
@@ -1668,7 +1668,7 @@ int32_t lsm6dsl_xl_hp_path_internal_get(lsm6dsl_ctx_t *ctx,
 
 /**
   * @brief  Accelerometer analog chain bandwidth selection (only for
-  *         accelerometer ODR ≥ 1.67 kHz).[set]
+  *         accelerometer ODR â‰¥ 1.67 kHz).[set]
   *
   * @param  ctx    Read / write interface definitions
   * @param  val    Change the values of bw0_xl in reg CTRL1_XL
@@ -1690,7 +1690,7 @@ int32_t lsm6dsl_xl_filter_analog_set(lsm6dsl_ctx_t *ctx, lsm6dsl_bw0_xl_t val)
 
 /**
   * @brief  Accelerometer analog chain bandwidth selection (only for
-  *         accelerometer ODR ≥ 1.67 kHz).[get]
+  *         accelerometer ODR â‰¥ 1.67 kHz).[get]
   *
   * @param  ctx    Read / write interface definitions
   * @param  val    Get the values of bw0_xl in reg CTRL1_XL
@@ -5624,7 +5624,7 @@ int32_t lsm6dsl_mag_soft_iron_mat_get(lsm6dsl_ctx_t *ctx, uint8_t *buff)
 
 /**
   * @brief  Offset for hard-iron compensation register (r/w). The value is
-  *         expressed as a 16-bit word in two’s complement.[set]
+  *         expressed as a 16-bit word in twoâ€™s complement.[set]
   *
   * @param  ctx    Read / write interface definitions
   * @param  buff   Buffer that contains data to write
@@ -5647,7 +5647,7 @@ int32_t lsm6dsl_mag_offset_set(lsm6dsl_ctx_t *ctx, uint8_t *buff)
 
 /**
   * @brief  Offset for hard-iron compensation register(r/w).
-  *         The value is expressed as a 16-bit word in two’s complement.[get]
+  *         The value is expressed as a 16-bit word in twoâ€™s complement.[get]
   *
   * @param  ctx    Read / write interface definitions
   * @param  buff   Buffer that stores data read

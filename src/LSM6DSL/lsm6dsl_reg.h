@@ -74,6 +74,11 @@
   *
   */
 
+ typedef enum {
+  MEMS_SUCCESS = 0x00,
+  MEMS_ERROR = 0x01
+ } mems_status_t;
+
 typedef union{
   int16_t i16bit[3];
   uint8_t u8bit[6];
@@ -1912,6 +1917,12 @@ int32_t lsm6dsl_sh_slave_3_dec_get(lsm6dsl_ctx_t *ctx,
 //#ifdef __cplusplus
 //}
 //#endif
+
+#define LSM6DSL_PEDOMETER_THRESHOLD_LOW       0x00  /**< Lowest  value of pedometer threshold */
+#define LSM6DSL_PEDOMETER_THRESHOLD_MID_LOW   0x07
+#define LSM6DSL_PEDOMETER_THRESHOLD_MID       0x0F
+#define LSM6DSL_PEDOMETER_THRESHOLD_MID_HIGH  0x17
+#define LSM6DSL_PEDOMETER_THRESHOLD_HIGH      0x1F  /**< Highest value of pedometer threshold */
 
 #endif /* LSM6DSL_DRIVER_H */
 

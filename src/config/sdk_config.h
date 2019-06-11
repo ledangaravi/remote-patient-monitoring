@@ -51,10 +51,10 @@
 //==========================================================
 // <q> BSP_BTN_BLE_ENABLED  - bsp_btn_ble - Button Control for BLE
  
+#define HARDFAULT_HANDLER_GDB_PSP_BACKTRACE 1
+#define HARDFAULT_HANDLER_ENABLED 1
 
-#ifndef BSP_BTN_BLE_ENABLED
-#define BSP_BTN_BLE_ENABLED 1
-#endif
+
 
 // </h> 
 //==========================================================
@@ -3779,7 +3779,7 @@
  
 
 #ifndef NRFX_TIMER1_ENABLED
-#define NRFX_TIMER1_ENABLED 0
+#define NRFX_TIMER1_ENABLED 1
 #endif
 
 // <q> NRFX_TIMER2_ENABLED  - Enable TIMER2 instance
@@ -4169,7 +4169,7 @@
  
 
 #ifndef NRFX_TWI0_ENABLED
-#define NRFX_TWI0_ENABLED 0
+#define NRFX_TWI0_ENABLED 1
 #endif
 
 // <q> NRFX_TWI1_ENABLED  - Enable TWI1 instance
@@ -5675,7 +5675,7 @@
  
 
 #ifndef TWI_DEFAULT_CONFIG_CLR_BUS_INIT
-#define TWI_DEFAULT_CONFIG_CLR_BUS_INIT 0
+#define TWI_DEFAULT_CONFIG_CLR_BUS_INIT 1
 #endif
 
 // <q> TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT  - Enables bus holding after uninit
