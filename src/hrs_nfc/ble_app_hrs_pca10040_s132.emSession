@@ -61,7 +61,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="1163" useTextEdit="1" useBinaryEdit="0" left="0" path="main.cpp" selected="1" top="1131" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="64" y="1241" useTextEdit="1" useBinaryEdit="0" left="0" path="main.cpp" selected="1" top="1212" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="ble_app_hrs_pca10040_s132" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="C:/build/HP-NFCL74-JOB1/private/nfc_t2t_lib/nfc_t2t_lib.c&#xa;&#xa;C:/build/HP-NFCL74-JOB1/private/nfc_t2t_lib/nfc_t2t_lib_al.c&#xa;" fileDialogInitialDirectory="C:/Users/ledangaravi/Stuff/Programming/GitHub/remote-patient-monitoring/nRF5_SDK/components/nfc/ndef/uri" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="ble_app_hrs_pca10040_s132" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="C:/build/HP-NFCL74-JOB1/private/nfc_t2t_lib/nfc_t2t_lib.c&#xa;&#xa;C:/build/HP-NFCL74-JOB1/private/nfc_t2t_lib/nfc_t2t_lib_al.c&#xa;" fileDialogInitialDirectory="C:/Users/ledangaravi/Stuff/Programming/GitHub/remote-patient-monitoring/nRF5_SDK/components/nfc/ndef/uri" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

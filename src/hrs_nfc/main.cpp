@@ -1217,15 +1217,7 @@ int main(void)
     /* Create NFC NDEF message description, capacity - 3 records */
     NFC_NDEF_MSG_DEF(nfc_custom_msg, 3);
 
-    /* Create NFC NDEF Android Application Record description */
-    NFC_NDEF_ANDROID_LAUNCHAPP_RECORD_DESC_DEF(nfc_and_launchapp_rec,
-                                               m_android_package_name,
-                                               sizeof(m_android_package_name));
-
-    /* Add Android Application Record as first record to message */
-    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_custom_msg),
-                                       &NFC_NDEF_ANDROID_LAUNCHAPP_RECORD_DESC(nfc_and_launchapp_rec));
-    VERIFY_SUCCESS(err_code);
+    
 
     /* Create NFC NDEF text record description in English */
     NFC_NDEF_TEXT_RECORD_DESC_DEF(nfc_en_text_rec,
@@ -1247,6 +1239,15 @@ int main(void)
                                        &NFC_NDEF_URI_RECORD_DESC(nfc_uri_rec));
     VERIFY_SUCCESS(err_code);
     
+    /* Create NFC NDEF Android Application Record description */
+    NFC_NDEF_ANDROID_LAUNCHAPP_RECORD_DESC_DEF(nfc_and_launchapp_rec,
+                                               m_android_package_name,
+                                               sizeof(m_android_package_name));
+
+    /* Add Android Application Record as first record to message */
+    err_code = nfc_ndef_msg_record_add(&NFC_NDEF_MSG(nfc_custom_msg),
+                                       &NFC_NDEF_ANDROID_LAUNCHAPP_RECORD_DESC(nfc_and_launchapp_rec));
+    VERIFY_SUCCESS(err_code);
 
     /* Encode whole message into buffer */
     err_code = nfc_ndef_msg_encode(&NFC_NDEF_MSG(nfc_custom_msg),
