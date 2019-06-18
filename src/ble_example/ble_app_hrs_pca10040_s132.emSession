@@ -24,7 +24,10 @@
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;Application"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;BH1792GLC"/>
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;Board Support"/>
+<<<<<<< HEAD
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;I2C"/>
+=======
+>>>>>>> 3012bd69a681437c807b9e77b74a5e52c07e7a63
   <ProjectSessionItem path="ble_app_hrs_pca10040_s132;ble_app_hrs_pca10040_s132;LSM6DSL"/>
  </Project>
  <Register1>
@@ -58,6 +61,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
+<<<<<<< HEAD
   <SessionOpenFile windowGroup="DockEditLeft" x="1" y="1202" useTextEdit="1" useBinaryEdit="0" left="0" path="main.cpp" selected="1" top="1188" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="31" useTextEdit="1" useBinaryEdit="0" left="0" path="../BH1792GLC/BH1792GLC.cpp" selected="0" top="63" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="66" useTextEdit="1" useBinaryEdit="0" left="0" path="../BH1792GLC/BH1792GLC.h" selected="0" top="57" codecName="Default"/>
@@ -65,6 +69,12 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="2246" useTextEdit="1" useBinaryEdit="0" left="0" path="../LSM6DSL/lsm6dsl_reg.cpp" selected="0" top="2244" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="336" useTextEdit="1" useBinaryEdit="0" left="0" path="../LSM6DSL/lsm6dsl_reg.h" selected="0" top="324" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../I2C/i2c.cpp" selected="0" top="0" codecName="Default"/>
+=======
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="48" useTextEdit="1" useBinaryEdit="0" left="0" path="main.cpp" selected="1" top="41" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="31" useTextEdit="1" useBinaryEdit="0" left="0" path="../BH1792GLC/BH1792GLC.cpp" selected="0" top="63" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="66" useTextEdit="1" useBinaryEdit="0" left="0" path="../BH1792GLC/BH1792GLC.h" selected="0" top="57" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="108" useTextEdit="1" useBinaryEdit="0" left="0" path="../BH1792GLC/BH1792GLC_registers.h" selected="0" top="99" codecName="Default"/>
+>>>>>>> 3012bd69a681437c807b9e77b74a5e52c07e7a63
  </Files>
  <ARMCrossStudioWindow activeProject="ble_app_hrs_pca10040_s132" fileDialogDefaultFilter="*.h" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/home/udvpeter/remote-patient-monitoring/src/LSM6DSL" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
