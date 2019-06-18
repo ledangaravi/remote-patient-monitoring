@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 7
+Sheet 6 7
 Title ""
 Date ""
 Rev ""
@@ -41,9 +41,6 @@ Text Label 2800 900  2    50   ~ 0
 Wire Wire Line
 	3000 1100 3200 1100
 Wire Wire Line
-	3200 1100 3200 1250
-Connection ~ 3000 1100
-Wire Wire Line
 	3000 1100 3000 900 
 Wire Wire Line
 	2800 1100 2600 1100
@@ -53,17 +50,6 @@ Connection ~ 2800 1100
 Wire Wire Line
 	2800 1100 2800 900 
 $Comp
-L Device:C C13
-U 1 1 5CD4A3B8
-P 3200 1400
-F 0 "C13" H 3315 1446 50  0000 L CNN
-F 1 "0.1u" H 3315 1355 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 3238 1250 50  0001 C CNN
-F 3 "~" H 3200 1400 50  0001 C CNN
-	1    3200 1400
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C11
 U 1 1 5CD4AA19
 P 2600 1400
@@ -72,17 +58,6 @@ F 1 "0.1u" H 2485 1355 50  0000 R CNN
 F 2 "Capacitor_SMD:C_0402_1005Metric" H 2638 1250 50  0001 C CNN
 F 3 "~" H 2600 1400 50  0001 C CNN
 	1    2600 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0105
-U 1 1 5CD4AFFB
-P 3200 1550
-F 0 "#PWR0105" H 3200 1300 50  0001 C CNN
-F 1 "GND" H 3205 1377 50  0000 C CNN
-F 2 "" H 3200 1550 50  0001 C CNN
-F 3 "" H 3200 1550 50  0001 C CNN
-	1    3200 1550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -593,21 +568,8 @@ Wire Wire Line
 	5350 1700 5350 1800
 Wire Wire Line
 	5350 1800 5550 1800
-$Comp
-L HealthMonitor-rescue:TXB0104RUT-Logic_LevelTranslator U7
-U 1 1 5CE63338
-P 2900 2450
-F 0 "U7" H 2900 1664 50  0000 C CNN
-F 1 "TXB0104RUT" H 2900 1573 50  0000 C CNN
-F 2 "Package_DFN_QFN:Texas_R_PUQFN-N12" H 2900 1700 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/txb0104.pdf" H 3010 2545 50  0001 C CNN
-	1    2900 2450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2900 3450 2900 3150
-Wire Wire Line
-	3000 1100 3000 1750
 Text Label 1250 2550 0    50   ~ 0
 SDI
 Text Label 1250 2750 0    50   ~ 0
@@ -671,11 +633,7 @@ SDI
 Text Label 5200 2200 2    50   ~ 0
 CSB
 Wire Wire Line
-	3300 2150 3450 2150
-Wire Wire Line
 	3300 2350 3600 2350
-Wire Wire Line
-	3300 2550 3750 2550
 Text HLabel 4150 3600 0    50   Input ~ 0
 VCC
 Wire Wire Line
@@ -714,39 +672,6 @@ F 3 "" H 1800 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R27
-U 1 1 5CEB478D
-P 3450 1900
-F 0 "R27" V 3243 1900 50  0000 C CNN
-F 1 "50k" V 3334 1900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 3380 1900 50  0001 C CNN
-F 3 "~" H 3450 1900 50  0001 C CNN
-	1    3450 1900
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R28
-U 1 1 5CEB47F1
-P 3600 2150
-F 0 "R28" V 3393 2150 50  0000 C CNN
-F 1 "50k" V 3484 2150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 3530 2150 50  0001 C CNN
-F 3 "~" H 3600 2150 50  0001 C CNN
-	1    3600 2150
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R29
-U 1 1 5CEB4837
-P 3750 2350
-F 0 "R29" V 3543 2350 50  0000 C CNN
-F 1 "50k" V 3634 2350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 3680 2350 50  0001 C CNN
-F 3 "~" H 3750 2350 50  0001 C CNN
-	1    3750 2350
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:R R30
 U 1 1 5CEB488D
 P 3900 2550
@@ -763,57 +688,18 @@ Connection ~ 3750 2550
 Wire Wire Line
 	3600 2300 3600 2350
 Connection ~ 3600 2350
-Wire Wire Line
-	3450 2050 3450 2150
-Connection ~ 3450 2150
-Wire Wire Line
-	3600 2000 3600 1650
-Wire Wire Line
-	3600 1650 3450 1650
-Wire Wire Line
-	3450 1650 3450 1750
-Wire Wire Line
-	3750 2200 3750 1650
-Connection ~ 3600 1650
-$Comp
-L power:+3V3 #PWR0126
-U 1 1 5CEE1B1D
-P 3700 1550
-F 0 "#PWR0126" H 3700 1400 50  0001 C CNN
-F 1 "+3V3" H 3715 1723 50  0000 C CNN
-F 2 "" H 3700 1550 50  0001 C CNN
-F 3 "" H 3700 1550 50  0001 C CNN
-	1    3700 1550
-	1    0    0    -1  
-$EndComp
 Text HLabel 4300 2150 2    50   Input ~ 0
 SCLK_O
-Wire Wire Line
-	3450 2150 4300 2150
 Text HLabel 4300 2350 2    50   Input ~ 0
 SDO_O
 Wire Wire Line
 	3600 2350 4300 2350
 Text HLabel 4300 2550 2    50   Input ~ 0
 SDI_O
-Wire Wire Line
-	3750 2550 4300 2550
 Text HLabel 4300 2750 2    50   Input ~ 0
 CSB_O
 Wire Wire Line
 	3300 2750 3900 2750
-Wire Wire Line
-	3600 1650 3700 1650
-Wire Wire Line
-	3700 1550 3700 1650
-Connection ~ 3700 1650
-Wire Wire Line
-	3700 1650 3750 1650
-Wire Wire Line
-	3750 1650 3900 1650
-Wire Wire Line
-	3900 1650 3900 2400
-Connection ~ 3750 1650
 Wire Wire Line
 	3900 2700 3900 2750
 Connection ~ 3900 2750
@@ -846,4 +732,118 @@ F 3 "" H 11000 1350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	11000 1350 10900 1350
+Connection ~ 3000 1100
+Wire Wire Line
+	3750 2550 4300 2550
+Wire Wire Line
+	3300 2550 3750 2550
+Connection ~ 3750 1650
+Wire Wire Line
+	3900 1650 3900 2400
+Wire Wire Line
+	3750 1650 3900 1650
+Wire Wire Line
+	3700 1650 3750 1650
+Connection ~ 3700 1650
+Wire Wire Line
+	3700 1550 3700 1650
+Wire Wire Line
+	3600 1650 3700 1650
+Wire Wire Line
+	3450 2150 4300 2150
+$Comp
+L power:+3V3 #PWR0126
+U 1 1 5CEE1B1D
+P 3700 1550
+F 0 "#PWR0126" H 3700 1400 50  0001 C CNN
+F 1 "+3V3" H 3715 1723 50  0000 C CNN
+F 2 "" H 3700 1550 50  0001 C CNN
+F 3 "" H 3700 1550 50  0001 C CNN
+	1    3700 1550
+	1    0    0    -1  
+$EndComp
+Connection ~ 3600 1650
+Wire Wire Line
+	3750 2200 3750 1650
+Wire Wire Line
+	3450 1650 3450 1750
+Wire Wire Line
+	3600 1650 3450 1650
+Wire Wire Line
+	3600 2000 3600 1650
+Connection ~ 3450 2150
+Wire Wire Line
+	3450 2050 3450 2150
+$Comp
+L Device:R R29
+U 1 1 5CEB4837
+P 3750 2350
+F 0 "R29" V 3543 2350 50  0000 C CNN
+F 1 "50k" V 3634 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3680 2350 50  0001 C CNN
+F 3 "~" H 3750 2350 50  0001 C CNN
+	1    3750 2350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R28
+U 1 1 5CEB47F1
+P 3600 2150
+F 0 "R28" V 3393 2150 50  0000 C CNN
+F 1 "50k" V 3484 2150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3530 2150 50  0001 C CNN
+F 3 "~" H 3600 2150 50  0001 C CNN
+	1    3600 2150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R27
+U 1 1 5CEB478D
+P 3450 1900
+F 0 "R27" V 3243 1900 50  0000 C CNN
+F 1 "50k" V 3334 1900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3380 1900 50  0001 C CNN
+F 3 "~" H 3450 1900 50  0001 C CNN
+	1    3450 1900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3300 2150 3450 2150
+Wire Wire Line
+	3000 1100 3000 1750
+$Comp
+L HealthMonitor-rescue:TXB0104RUT-Logic_LevelTranslator U7
+U 1 1 5CE63338
+P 2900 2450
+F 0 "U7" H 2900 1664 50  0000 C CNN
+F 1 "TXB0104RUT" H 2900 1573 50  0000 C CNN
+F 2 "Package_DFN_QFN:Texas_R_PUQFN-N12" H 2900 1700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/txb0104.pdf" H 3010 2545 50  0001 C CNN
+	1    2900 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5CD4AFFB
+P 3200 1550
+F 0 "#PWR0105" H 3200 1300 50  0001 C CNN
+F 1 "GND" H 3205 1377 50  0000 C CNN
+F 2 "" H 3200 1550 50  0001 C CNN
+F 3 "" H 3200 1550 50  0001 C CNN
+	1    3200 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C13
+U 1 1 5CD4A3B8
+P 3200 1400
+F 0 "C13" H 3315 1446 50  0000 L CNN
+F 1 "0.1u" H 3315 1355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 3238 1250 50  0001 C CNN
+F 3 "~" H 3200 1400 50  0001 C CNN
+	1    3200 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 1100 3200 1250
 $EndSCHEMATC

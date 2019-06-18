@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:HealthMonitor-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -105,10 +105,6 @@ F6 "GND" I R 5500 3450 50
 F7 "RX" I R 5500 3650 50 
 F8 "TX" I R 5500 3750 50 
 $EndSheet
-Wire Wire Line
-	6250 3750 5500 3750
-Wire Wire Line
-	5500 3650 6250 3650
 Wire Wire Line
 	6250 3350 6150 3350
 Wire Wire Line
@@ -593,4 +589,20 @@ F5 "INT1" O L 8750 2100 50
 F6 "GND" U L 8750 1250 50 
 F7 "SDA" B L 8750 1550 50 
 $EndSheet
+Wire Wire Line
+	5850 3650 5850 3750
+Wire Wire Line
+	5850 3750 6250 3750
+Wire Wire Line
+	5500 3650 5850 3650
+Wire Wire Line
+	6250 3650 6150 3650
+Wire Wire Line
+	6150 3650 6150 3700
+Wire Wire Line
+	6150 3700 5750 3700
+Wire Wire Line
+	5750 3700 5750 3750
+Wire Wire Line
+	5750 3750 5500 3750
 $EndSCHEMATC
