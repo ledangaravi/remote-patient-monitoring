@@ -1,3 +1,6 @@
 [submodule "nRF5_SDK_15.3.0_59ac345"]
 	path = nRF5_SDK_15.3.0_59ac345
 	url = git@github.com:ledangaravi/nRF5_SDK_15.3.0_59ac345.git
+[submodule "Smartphone"]
+	path = Smartphone
+	url = https://github.com/fnoah/AnalogClock.git
