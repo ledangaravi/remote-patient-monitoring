@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Heart Rate",
+    "url": "https://image.flaticon.com/icons/svg/45/45794.svg",
+    "price": "136"
+  },
+  {
+    "title": "Blood Pressure",
+    "url": "https://image.flaticon.com/icons/svg/45/45817.svg",
+    "price": "58"
+  },
+  {
+    "title": "Step Count",
+    "url": "https://image.flaticon.com/icons/svg/45/45983.svg",
+    "price": "35"
+  },
+  {
+    "title": "Pulse Oximetry",
+    "url": "https://image.flaticon.com/icons/svg/45/45844.svg",
+    "price": "98"
+  },
+  {
+    "title": "Skin Temperature",
+    "url": "https://image.flaticon.com/icons/svg/45/45969.svg",
+    "price": "34"
+  }
+]
