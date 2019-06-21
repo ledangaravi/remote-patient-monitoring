@@ -1,1 +1,1 @@
-# Patient24 - next generation remote patient monitoring
+# remote-patient-monitoring
