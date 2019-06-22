@@ -18,11 +18,10 @@ static uint8_t       m_rx_buf[3];    /**< RX buffer. */
 static const uint8_t m_length = sizeof(m_tx_buf);        /**< Transfer length. */
 
 static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE(0);  /**< SPI instance. */
-//static const nrf_drv_spi_t spi = NRFX_SPIM_INSTANCE(0);  /**< SPI instance. */
 static volatile bool spi_xfer_done;  /**< Flag used to indicate that SPI instance completed the transfer. */
 
 
-/**
+/** from the Segger SPI example
  * @brief SPI user event handler.
  * @param event
  */
@@ -40,7 +39,7 @@ void spi_event_handler(nrf_drv_spi_evt_t const * p_event,
     }
 }
 
-
+/*write to register function*/
 void max86141_write_reg(uint8_t address, uint8_t data_in)
 {
 
@@ -60,6 +59,7 @@ void max86141_write_reg(uint8_t address, uint8_t data_in)
 
 }
 
+/*read register function*/
 void max86141_read_reg(uint8_t address, uint8_t *data_out)
 {
 
@@ -81,44 +81,22 @@ void max86141_read_reg(uint8_t address, uint8_t *data_out)
 }
 
 
-
+/*inspired by pseudo-code available on MAX86141 datasheet for initialisation*/
 void max86141_init()
 {
-    uint8_t value;
-    uint8_t value1;
-    
 
     max86141_write_reg(REG_MODE_CONFIG, 0x01); //soft reset, bit turns to 0 after reset
-
     nrf_delay_ms(1);
-
     max86141_write_reg(REG_MODE_CONFIG, 0x02); //shutdown
     nrf_delay_ms(1);
-
-    max86141_read_reg(REG_PART_ID, &value1);
-
-    NRF_LOG_INFO("%02X, value1:", value1);
-    max86141_read_reg(REG_INTR_STATUS_1, &value); // clear intr 1
+    max86141_read_reg(REG_INTR_STATUS_1, &value); // clear interrupt 1
     nrf_delay_ms(1);
-    max86141_read_reg(REG_INTR_STATUS_2, &value);  // clear intr 1
+    max86141_read_reg(REG_INTR_STATUS_2, &value);  // clear interrupt 2
     nrf_delay_ms(1);
     max86141_write_reg(REG_PPG_CONFIG_1, 0x2B);//sample averaging = 1, rate 25sps
     nrf_delay_ms(1);
-
-
-
-    //max86141_read_reg(REG_PPG_CONFIG_1, &value);
-
-   // NRF_LOG_INFO("%02X", value);
-
     max86141_write_reg(REG_PPG_CONFIG_3, 0xC0);  //led settling at 12usecs
     nrf_delay_ms(1);
-
-
-    //max86141_read_reg(REG_PART_ID, &value1);
-
-    //NRF_LOG_INFO("%02X, value1:", value1);
-/*
     max86141_write_reg(REG_PDIODE_BIAS, 0x11); //65Pf PD CAP
     nrf_delay_ms(1);
     max86141_write_reg(REG_LED1_PA, 0x20); //LED1 drive current 15.36mA
@@ -134,11 +112,13 @@ void max86141_init()
     max86141_write_reg(REG_LED_SEQ_3, 0x00); //led5 and 6 off
     nrf_delay_ms(1);
     max86141_write_reg(REG_MODE_CONFIG, 0x00); //start sampling
-*/
+
+  /*
     NRF_LOG_INFO("Initialized");
-    NRF_LOG_FLUSH();
+    NRF_LOG_FLUSH();*/
 }
 
+/* inspired by pseudo-code available on MAX86141 datasheet */
 void device_data_read(void)
 {
       uint8_t sample_count;
@@ -152,8 +132,10 @@ void device_data_read(void)
 
       max86141_read_reg(REG_FIFO_DATA_COUNT, &sample_count); //number of items available in FIFO to read 
 
-      //max86141_read_fifo(dataBuf, sample_count*3);
+      max86141_read_fifo(dataBuf, sample_count*3);
 
+  
+      /*suitable formatting of data for 2 LEDs*/
       int i = 0;
       for (i=0; i<sample_count; i++)
       {
@@ -172,32 +154,32 @@ void max86141_fifo_intr()
     uint8_t intStatus;
     max86141_read_reg(REG_INTR_STATUS_1, &intStatus); 
 
-    if (intStatus& 0x80) //indicates full FIFO, check &
+    if (intStatus& 0x80) //indicates full FIFO
     { 
     device_data_read();
     }
  }
 
+/*SPI initialisation, inspired by Segger Studio example code*/
 void spi_init()
 {
-    nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG; //sclk 28 sdo 29 MISO sdi 4 MOSI csb 5
+    nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG;
     nrf_drv_spi_frequency_t frequency;
     spi_config.ss_pin   = 5;
-    spi_config.miso_pin = 29; //sdo
-    spi_config.mosi_pin = 4; //sdi
+    spi_config.miso_pin = 29; //SDO
+    spi_config.mosi_pin = 4; //SDI
     spi_config.sck_pin  = 28;
-    spi_config.frequency = NRF_DRV_SPI_FREQ_125K;
+    spi_config.frequency = NRF_DRV_SPI_FREQ_125K; //frequency of transfer, MAX86141 supports upto 8MHz
     APP_ERROR_CHECK(nrf_drv_spi_init(&spi, &spi_config, NULL, NULL));
 }
 
+/*read FIFO*/
 void max86141_readfifo(uint8_t data_buffer[], uint8_t count)
 {
     uint8_t output;
     for(int i =0; i<count; i++){
 
         max86141_read_reg(REG_FIFO_DATA, &output);
-        //data_buffer[i]
-
-
+        data_buffer[i] = &output;
     }
 }
