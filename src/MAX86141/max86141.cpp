@@ -69,6 +69,7 @@ void max86141_read_reg(uint8_t address, uint8_t *data_out)
     m_tx_buf[1] = READ_EN;
     m_tx_buf[2] = 0x00;
 
+  
 /**< A buffer for incoming data. */ 
     m_rx_buf[0] = 0;
     m_rx_buf[1] = 0;
