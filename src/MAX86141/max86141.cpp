@@ -94,7 +94,7 @@ void max86141_init()
     nrf_delay_ms(1);
     max86141_read_reg(REG_INTR_STATUS_2, &value);  // clear interrupt 2
     nrf_delay_ms(1);
-    max86141_write_reg(REG_PPG_CONFIG_1, 0x2B);//sample averaging = 1, rate 25sps
+    max86141_write_reg(REG_PPG_CONFIG_1, 0x2B);//sample averaging = 1, rate 25sps --> averaging=4 for RF algorithm
     nrf_delay_ms(1);
     max86141_write_reg(REG_PPG_CONFIG_3, 0xC0);  //led settling at 12usecs
     nrf_delay_ms(1);
