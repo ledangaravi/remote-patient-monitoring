@@ -1,0 +1,6 @@
+framework module AnalogClock {
+  umbrella header "AnalogClock-umbrella.h"
+
+  export *
+  module * { export * }
+}
