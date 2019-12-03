@@ -8,7 +8,7 @@ Patient24 brings together newly released sensors and state-of-the-art self-charg
 
 The Patient24 solution consists of a wearable device accompanied by an Android and an iOS application. [Watch the video](https://www.youtube.com/watch?v=plrVBWvTG4c) below to learn more.
 
-[![Promotional Video](https://github.com/ledangaravi/remote-patient-monitoring/blob/master/wiki/home/promo_video_screenshot.png)](https://www.youtube.com/watch?v=plrVBWvTG4c)
+[![Promotional Video](https://github.com/ledangaravi/remote-patient-monitoring/blob/master/wiki/home/promo.gif)](https://www.youtube.com/watch?v=plrVBWvTG4c)
 
 ## Contact
 - For all enquiries do not hesitate to [contact us via email](mailto:jf1116@ic.ac.uk).
